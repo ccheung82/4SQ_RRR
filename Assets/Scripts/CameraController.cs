@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private float turnSpeed;
+    private float rotationAcceleration = 0.9f;
+    public float turnspeedInital = 2f;
+    void Start(){
+        turnSpeed = turnspeedInital;
     }
-
-    // Update is called once per frame
     void Update()
     {
+        //If the A key is pressed turn in the left direction at turnspeed
+        if(Input.GetKey(KeyCode.A)){
+            transform.Rotate(new Vector3(0, -turnSpeed, 0));
+        }
+            //If the D key is pressed turn in the left direction at turnspeed
+        if(Input.GetKey(KeyCode.D)){
+            transform.Rotate(new Vector3(0, turnSpeed, 0));
+        }
         
+
     }
 }

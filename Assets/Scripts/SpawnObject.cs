@@ -10,7 +10,7 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetKeyDown(KeyCode.Space)){
             Debug.Log("Spawn Button pressed");
             GameObject newFood = Instantiate(food);
             newFood.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
