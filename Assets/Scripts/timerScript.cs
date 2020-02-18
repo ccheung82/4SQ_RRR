@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class countdown : MonoBehaviour
+public class timerScript : MonoBehaviour
 {
     [SerializeField] Text uiText;
     [SerializeField] float mainTimer;
