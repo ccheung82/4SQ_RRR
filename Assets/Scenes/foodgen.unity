@@ -187,7 +187,7 @@ MonoBehaviour:
   - {fileID: 3532257022428434166, guid: 8506ba024dd194a6eb89fe886df1097c, type: 3}
   - {fileID: 2767546406118505195, guid: d9fde4710da2f4439a229a8578715c88, type: 3}
   spawnPos: {fileID: 272868568}
-  level: 4
+  level: 2
 --- !u!81 &555096929
 AudioListener:
   m_ObjectHideFlags: 0

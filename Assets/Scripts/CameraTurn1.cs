@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTurn : MonoBehaviour
+public class CameraTurn1 : MonoBehaviour
 {
 
     /* PLACE SCRIPT ON PLAYER, then set as many animals to serve in the player's Unity inspector, then
