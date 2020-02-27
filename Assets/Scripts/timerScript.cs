@@ -20,14 +20,14 @@ public class timerScript : MonoBehaviour
 
     void Update()
     {
-        if (timer >= 0.0f && canCount)
+        if (timer >= 0.0f && canCount) //timer is active and enabled
         {
             timer -= Time.deltaTime;
             uiText.text = timer.ToString("F");
             timerIcon.fillAmount = timer / mainTimer; // updates the images fill value
         }
 
-        else if (timer <= 0.0f && !doOnce)
+        else if (timer <= 0.0f && !doOnce) //timer is dead
         {
             canCount = false;
             doOnce = true;
