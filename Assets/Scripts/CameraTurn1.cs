@@ -34,7 +34,7 @@ public class CameraTurn1 : MonoBehaviour
     void LateUpdate()
     {
 
-        if ((Input.GetKeyDown(KeyCode.D)))
+        if ((Input.GetKeyDown(KeyCode.D)) || Input.GetKeyUp(KeyCode.RightArrow))
         {
 
             if (currentObj != objs.Length - 1)
@@ -51,7 +51,7 @@ public class CameraTurn1 : MonoBehaviour
         }
 
         //Turn Left to Next Obj
-        else if ((Input.GetKeyDown(KeyCode.A) /*|| rotSpinLeft*/))
+        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) /*|| rotSpinLeft*/))
         {
             //Sets current obj to look at
             if (currentObj != 0)
