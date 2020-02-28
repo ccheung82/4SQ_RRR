@@ -18,7 +18,7 @@ public class CharacterBehave : MonoBehaviour
     // For destroying objects- make a list that can have max 3 components? 
 
     public float foodDistance = 0.5f;
-    public float throwForce = 5.0f;
+    public float throwForce = 2000f;
     public bool holdingFood = true;
     public bool startFood = true;
 
@@ -41,7 +41,7 @@ public class CharacterBehave : MonoBehaviour
         if (holdingFood){
             food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
             if (Input.GetKeyDown(KeyCode.UpArrow)){
-                food.GetComponent<Rigidbody>().useGravity = true;
+                //food.GetComponent<Rigidbody>().useGravity = true;
                 food.GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwForce);
                 holdingFood = false;
             }

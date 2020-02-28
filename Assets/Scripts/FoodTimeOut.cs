@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //This script will be in every food object and will destory the food if it hasn't already been in 5 seconds
 
 public class FoodTimeOut : MonoBehaviour
@@ -10,6 +11,7 @@ public class FoodTimeOut : MonoBehaviour
     void Start()
     {
         //StartCoroutine(WaitAndDestroy());
+       
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class FoodTimeOut : MonoBehaviour
         if (col.gameObject.tag == "customer")
         {
             Destroy(this.gameObject);
+            //timerScript sn = gameObject.GetComponent<timerScript>();
+            //sn.ResetBtn();
         }
     }
 }

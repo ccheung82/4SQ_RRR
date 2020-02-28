@@ -44,6 +44,12 @@ public class timerScript : MonoBehaviour
         doOnce = false;
     }
 
+    public void resetTimer() {
+        timer = mainTimer;
+        canCount = true;
+        doOnce = false;
+    }
+
     void GameOver()
     {
         //Load a new scene
