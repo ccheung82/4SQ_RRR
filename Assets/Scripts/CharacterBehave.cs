@@ -94,6 +94,13 @@ public class CharacterBehave : MonoBehaviour
         }
 
     }
+    
+        IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(GameObject.FindWithTag("food"));
+    }
+
 
     // void NewFood()
     // {
