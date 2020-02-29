@@ -5,12 +5,11 @@ using UnityEngine;
 public class CharacterBehave : MonoBehaviour
 {
 
-    public GameObject food;
+    private GameObject food;
     public GameObject spawner;
     public GameObject playerCam;
     public GameObject nextFood;
-    public Material[] colors;
-
+    public GameObject[] spawnees;
     //Renderer color;
 
     // GameObject newObj;
@@ -21,11 +20,16 @@ public class CharacterBehave : MonoBehaviour
     public float throwForce = 2000f;
     public bool holdingFood = true;
     public bool startFood = true;
+    public int level;
+    private int randomInt1;
+    private int randomInt2;
+
 
     int i = 0;
 
     // Start is called before the first frame update
     void Start(){
+        GenRandom();
         food.GetComponent<Rigidbody>().useGravity = false;
         //color = GetComponent<Renderer>();
         
@@ -52,31 +56,54 @@ public class CharacterBehave : MonoBehaviour
         else{
             if (Input.GetKeyUp(KeyCode.UpArrow)){
                 
-                Debug.Log("i: "+ i);
-                if (i < (colors.Length - 1)) {
-                    i++;
-                }
-                else {
-                    i = 0;
-                }
-               
+                // Debug.Log("i: "+ i);
+                // if (i < (colors.Length - 1)) {
+                //     i++;
+                // }
+                // else {
+                //     i = 0;
+                // }
                 holdingFood = true;
-                NewFood();
-                nextFood.GetComponent<Renderer>().material = colors[i];
-                //UpdateNextFood();
+                GenRandom();
             }
         }
     }
 
-    void NewFood()
-    {
-        Instantiate(food, spawner.transform.position, spawner.transform.rotation);
-        if (i < colors.Length - 1)
-            food.GetComponent<Renderer>().material = colors[i];
-        else
-            food.GetComponent<Renderer>().material = colors[colors.Length-1];
+    GameObject GenRandom(){
+        bool exists = GameObject.FindWithTag("food");
+        randomInt1 = Random.Range(0, level);
+        randomInt2 = Random.Range(0, level);
+
+        
+        if(exists){
+            
+            Destroy(GameObject.FindWithTag("food"));
+
+            food = nextFood;
+            food.tag = "food";
+            nextFood = Instantiate(spawnees[randomInt1], nextFood.transform.position, nextFood.transform.rotation);
+            nextFood.tag = "nextFood";
+
+            return food;
+        }else{
+            food = Instantiate(spawnees[randomInt1],spawner.transform.position, spawner.transform.rotation);
+            food.tag = "food";
+            nextFood = Instantiate(spawnees[randomInt2],nextFood.transform.position, nextFood.transform.rotation);
+            nextFood.tag = "nextFood";
+            return food;
+        }
+
     }
-    void UpdateNextFood() {
-        nextFood.GetComponent<Renderer>().material = colors[i];
-    }
+
+    // void NewFood()
+    // {
+    //     Instantiate(food, spawner.transform.position, spawner.transform.rotation);
+    //     if (i < colors.Length - 1)
+    //         food.GetComponent<Renderer>().material = colors[i];
+    //     else
+    //         food.GetComponent<Renderer>().material = colors[colors.Length-1];
+    // // }
+    // void UpdateNextFood() {
+    //     nextFood.GetComponent<Renderer>().material = colors[i];
+    // }
 }
