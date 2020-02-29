@@ -41,7 +41,7 @@ public class CharacterBehave : MonoBehaviour
         if (holdingFood){
             food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
             if (Input.GetKeyDown(KeyCode.UpArrow)){
-                //food.GetComponent<Rigidbody>().useGravity = true;
+                food.GetComponent<Rigidbody>().useGravity = true;
                 food.GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwForce);
                 holdingFood = false;
             }
