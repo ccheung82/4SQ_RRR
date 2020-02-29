@@ -77,7 +77,7 @@ public class CharacterBehave : MonoBehaviour
         
         if(exists){
             
-            Destroy(GameObject.FindWithTag("food"));
+            //Destroy(GameObject.FindWithTag("food"));
 
             food = nextFood;
             food.tag = "food";
