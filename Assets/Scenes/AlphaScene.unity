@@ -1643,7 +1643,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 726147429}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.01
   m_Height: 0.01
   m_Direction: 1
@@ -3634,7 +3634,7 @@ MonoBehaviour:
   - {fileID: 3532257022428434166, guid: 8506ba024dd194a6eb89fe886df1097c, type: 3}
   - {fileID: 2767546406118505195, guid: d9fde4710da2f4439a229a8578715c88, type: 3}
   foodDistance: 0.4
-  throwForce: 100
+  throwForce: 2000
   holdingFood: 1
   startFood: 1
   level: 4
