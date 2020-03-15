@@ -10,6 +10,7 @@ public class MenuController : MonoBehaviour
     public GameObject quitButton;
     public GameObject settingsButton;
     public GameObject controlsPanel;
+    public GameObject settingsPanel;
     public GameObject continueButton;
     public GameObject backButton;
 
@@ -27,7 +28,7 @@ public class MenuController : MonoBehaviour
         settingsButton.SetActive(false);
     }
 
-    public void QuitGame()
+    public void ContinueButtonClicked()
     {
         Debug.Log("Quit Pressed");
         Application.Quit();
@@ -38,12 +39,12 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void SettingsButtonClicked()
+    public void creditsButtonClicked()
     {
-        controlsPanel.SetActive(false);
+        settingsPanel.SetActive(false);
         continueButton.SetActive(true);
-        backButton.SetActive(false);
     }
+    
 
 
 

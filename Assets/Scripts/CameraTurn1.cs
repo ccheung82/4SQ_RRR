@@ -40,12 +40,12 @@ public class CameraTurn1 : MonoBehaviour
             if (currentObj != objs.Length - 1)
             {
                 currentObj++;
-                Debug.Log(currentObj);
+                //Debug.Log(currentObj);
             }
             else
             {
                 currentObj = 0;
-                Debug.Log(currentObj);
+               // Debug.Log(currentObj);
             }
 
         }
@@ -57,12 +57,12 @@ public class CameraTurn1 : MonoBehaviour
             if (currentObj != 0)
             {
                 currentObj--;
-                Debug.Log(currentObj);
+                //Debug.Log(currentObj);
             }
             else
             {
                 currentObj = objs.Length - 1;
-                Debug.Log(currentObj);
+                //Debug.Log(currentObj);
             }
 
         }

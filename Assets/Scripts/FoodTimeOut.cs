@@ -28,10 +28,11 @@ public class FoodTimeOut : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("colllision detected");
+       
 
         if (col.gameObject.tag == "customer")
         {
+            Debug.Log("colllision detected");
             Destroy(this.gameObject);
             //timerScript sn = gameObject.GetComponent<timerScript>();
             //sn.ResetBtn();
