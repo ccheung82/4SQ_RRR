@@ -30,16 +30,10 @@ public class MenuController : MonoBehaviour
 
     public void ContinueButtonClicked()
     {
-        Debug.Log("Quit Pressed");
-        Application.Quit();
-    }
-
-    public void ContinueButtonClicked()
-    {
         SceneManager.LoadScene(1);
     }
 
-    public void creditsButtonClicked()
+    public void CreditsButtonClicked()
     {
         settingsPanel.SetActive(false);
         continueButton.SetActive(true);
