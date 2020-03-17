@@ -50,6 +50,13 @@ public class timerScript : MonoBehaviour
         doOnce = false;
     }
 
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "customer")
+        {
+            resetTimer();
+        }
+    }
+
     void GameOver()
     {
         //Load a new scene
