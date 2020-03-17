@@ -10,6 +10,7 @@ public class CharacterBehave : MonoBehaviour
     public GameObject playerCam;
     public GameObject nextFood;
     public GameObject[] spawnees;
+    private FoodTimeOut foodTimeOut;
     //Renderer color;
 
     // GameObject newObj;
@@ -47,6 +48,7 @@ public class CharacterBehave : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow)){
                 food.GetComponent<Rigidbody>().useGravity = true;
                 food.GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwForce);
+                food.GetComponent<FoodTimeOut>().holding = false;
                 holdingFood = false;
             }
             //if (Input.GetKeyDown(KeyCode.DownArrow)) {
@@ -95,11 +97,11 @@ public class CharacterBehave : MonoBehaviour
 
     }
     
-        IEnumerator WaitAndDestroy()
-    {
-        yield return new WaitForSeconds(5);
-        Destroy(GameObject.FindWithTag("food"));
-    }
+    //    IEnumerator WaitAndDestroy()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    Destroy(GameObject.FindWithTag("food"));
+    //}
 
 
     // void NewFood()

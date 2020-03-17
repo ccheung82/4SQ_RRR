@@ -4,20 +4,25 @@ using UnityEngine;
 
 
 //This script will be in every food object and will destory the food if it hasn't already been in 5 seconds
-
 public class FoodTimeOut : MonoBehaviour
 {
+    public bool holding = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(WaitAndDestroy());
+        
        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (holding == false)
+        {
+            Debug.Log("I should be destroying");
+            StartCoroutine(WaitAndDestroy());
+        }
     }
 
     IEnumerator WaitAndDestroy()
