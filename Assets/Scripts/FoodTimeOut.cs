@@ -10,7 +10,7 @@ public class FoodTimeOut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(WaitAndDestroy());
+        StartCoroutine(WaitAndDestroy());
        
     }
 
