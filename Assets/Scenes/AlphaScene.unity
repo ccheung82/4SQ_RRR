@@ -4210,6 +4210,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 726147441}
     m_Modifications:
+    - target: {fileID: 7324978962621070006, guid: d0e53943a0aea49c390047d24960e830,
+        type: 3}
+      propertyPath: resetBool
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7324978963872345011, guid: d0e53943a0aea49c390047d24960e830,
         type: 3}
       propertyPath: m_Name

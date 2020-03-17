@@ -12,6 +12,7 @@ public class timerScript : MonoBehaviour
     float timer; //timer 
     bool canCount = true; //should the timer decrease
     bool doOnce = false; 
+    public bool resetBool = false;
 
     void Start()
     {
@@ -35,13 +36,11 @@ public class timerScript : MonoBehaviour
             timer = 0.0f;
             GameOver();
         }
-    }
 
-    public void ResetBtn()
-    {
-        timer = mainTimer;
-        canCount = true;
-        doOnce = false;
+        if(resetBool) {
+            resetTimer();
+            resetBool = false;
+        }
     }
 
     public void resetTimer() {

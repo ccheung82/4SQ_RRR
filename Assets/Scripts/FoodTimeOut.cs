@@ -7,12 +7,13 @@ using UnityEngine;
 public class FoodTimeOut : MonoBehaviour
 {
     public bool holding = true;
+    // public GameObject timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-       
+        // GameObject theScript = GameObject.Find("timerScript");
+        // timerScript tScript = theScript.GetComponent<timerScript>();
     }
 
     // Update is called once per frame
@@ -33,12 +34,15 @@ public class FoodTimeOut : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-       
 
         if (col.gameObject.tag == "customer")
         {
+            GameObject theScript = GameObject.Find("timerController");
+            timerScript tScript = theScript.GetComponent<timerScript>();
+
             Debug.Log("colllision detected");
             Destroy(this.gameObject);
+            tScript.resetTimer();
             //timerScript sn = gameObject.GetComponent<timerScript>();
             //sn.ResetBtn();
         }
