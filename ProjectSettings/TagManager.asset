@@ -8,6 +8,10 @@ TagManager:
   - Projectile
   - customer
   - nextFood
+  - blue
+  - green
+  - red
+  - purple
   layers:
   - Default
   - TransparentFX

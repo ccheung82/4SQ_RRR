@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 //This script will be in every food object and will destory the food if it hasn't already been in 5 seconds
 public class FoodTimeOut : MonoBehaviour
 {
     public bool holding = true;
-    // public GameObject timer;
+    int score = 0;
+    public TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        // GameObject theScript = GameObject.Find("timerScript");
-        // timerScript tScript = theScript.GetComponent<timerScript>();
+
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class FoodTimeOut : MonoBehaviour
     {
         if (holding == false)
         {
-            Debug.Log("I should be destroying");
+            //Debug.Log("I should be destroying");
             StartCoroutine(WaitAndDestroy());
         }
     }
@@ -40,11 +41,25 @@ public class FoodTimeOut : MonoBehaviour
             GameObject theScript = GameObject.Find("timerController");
             timerScript tScript = theScript.GetComponent<timerScript>();
 
+            //checks if food was given to correct character
+            Transform foodColor = this.gameObject.transform.GetChild(0); //this can be easily messed up if we add things so find another way to do this
+            Transform customerColor = col.gameObject.transform.GetChild(2);
+            Debug.Log(foodColor.tag);
+            Debug.Log(customerColor.tag);
+            if (foodColor.tag == customerColor.tag)
+            {
+                score = 1;
+                //Debug.Log("right color");
+            }
+            else
+            {
+                //score = -1; //do we want this or do we just want 3 lives? I think that's waht we want
+                //Debug.Log("wrong color");
+            }
+
             Debug.Log("colllision detected");
             Destroy(this.gameObject);
             tScript.resetTimer();
-            //timerScript sn = gameObject.GetComponent<timerScript>();
-            //sn.ResetBtn();
         }
     }
 }
