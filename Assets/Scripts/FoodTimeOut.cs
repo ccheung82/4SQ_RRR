@@ -9,7 +9,8 @@ public class FoodTimeOut : MonoBehaviour
 {
     public bool holding = true;
     int score = 0;
-    public TextMeshProUGUI scoreText;
+    //public TextMeshProUGUI scoreText;
+    public Score scoreScript;
 
     // Start is called before the first frame update
     void Start()
@@ -38,26 +39,26 @@ public class FoodTimeOut : MonoBehaviour
 
         if (col.gameObject.tag == "customer")
         {
+            Debug.Log("colllision detected");
             GameObject theScript = GameObject.Find("timerController");
             timerScript tScript = theScript.GetComponent<timerScript>();
 
             //checks if food was given to correct character
             Transform foodColor = this.gameObject.transform.GetChild(0); //this can be easily messed up if we add things so find another way to do this
             Transform customerColor = col.gameObject.transform.GetChild(2);
-            Debug.Log(foodColor.tag);
-            Debug.Log(customerColor.tag);
+            Debug.Log("food color is " + foodColor.tag);
+            Debug.Log("customer color is " + customerColor.tag);
             if (foodColor.tag == customerColor.tag)
             {
-                score = 1;
-                //Debug.Log("right color");
+                //score = 1;
+                scoreScript.ChangeScore(col.gameObject.transform);
+                Debug.Log("right color");
             }
             else
             {
                 //score = -1; //do we want this or do we just want 3 lives? I think that's waht we want
-                //Debug.Log("wrong color");
+                Debug.Log("wrong color");
             }
-
-            Debug.Log("colllision detected");
             Destroy(this.gameObject);
             tScript.resetTimer();
         }

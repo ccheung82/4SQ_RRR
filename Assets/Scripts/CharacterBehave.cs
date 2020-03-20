@@ -10,7 +10,6 @@ public class CharacterBehave : MonoBehaviour
     public GameObject playerCam;
     public GameObject nextFood;
     public GameObject[] spawnees;
-    private FoodTimeOut foodTimeOut;
     //Renderer color;
 
     // GameObject newObj;
