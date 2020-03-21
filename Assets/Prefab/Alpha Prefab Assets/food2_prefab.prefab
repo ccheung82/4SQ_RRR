@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 368349457229681642}
   - component: {fileID: -3983050213161006030}
   m_Layer: 0
-  m_Name: food2
-  m_TagString: food
+  m_Name: food2_prefab
+  m_TagString: nextFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8078249210888250391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: -11}
+  m_LocalPosition: {x: 0, y: 1.0411199, z: -0.7848646}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753a980b805964d51b8da004fcf455a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holding: 0

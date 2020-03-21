@@ -41,7 +41,7 @@ public class CharacterBehave : MonoBehaviour
 
         spawner.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance;
         //food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
-        nextFood.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance - playerCam.transform.up * 0.3f;
+        //nextFood.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance - playerCam.transform.up * 0.3f;
 
         if (holdingFood){
             food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
@@ -83,14 +83,14 @@ public class CharacterBehave : MonoBehaviour
 
             food = nextFood;
             food.tag = "food";
-            nextFood = Instantiate(spawnees[randomInt1], nextFood.transform.position, nextFood.transform.rotation);
+            nextFood = spawnees[randomInt1];
             nextFood.tag = "nextFood";
 
             return food;
         }else{
             food = Instantiate(spawnees[randomInt1],spawner.transform.position, spawner.transform.rotation);
             food.tag = "food";
-            nextFood = Instantiate(spawnees[randomInt2],nextFood.transform.position, nextFood.transform.rotation);
+            nextFood = spawnees[randomInt2];
             nextFood.tag = "nextFood";
             return food;
         }
