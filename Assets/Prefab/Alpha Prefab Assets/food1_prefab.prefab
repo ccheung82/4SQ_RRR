@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3466848604948079116}
   m_Layer: 0
   m_Name: food1_prefab
-  m_TagString: food
+  m_TagString: nextFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holding: 1
-  scoreText: {fileID: 0}
   scoreScript: {fileID: 0}
 --- !u!1 &7196704622569099436
 GameObject:
