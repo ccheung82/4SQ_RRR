@@ -10,12 +10,13 @@ public class FoodTimeOut : MonoBehaviour
     public bool holding = true;
     int score = 0;
     //public TextMeshProUGUI scoreText;
+    public GameObject scoreManager;
     public Score scoreScript;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        scoreScript = GameObject.Find("ScoreManager").GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,6 @@ public class FoodTimeOut : MonoBehaviour
     {
         if (holding == false)
         {
-            //Debug.Log("I should be destroying");
             StartCoroutine(WaitAndDestroy());
         }
     }
@@ -39,13 +39,13 @@ public class FoodTimeOut : MonoBehaviour
 
         if (col.gameObject.tag == "customer")
         {
-            Debug.Log("colllision detected");
+           //Debug.Log("colllision detected");
             GameObject theScript = GameObject.Find("timerController");
             timerScript tScript = theScript.GetComponent<timerScript>();
 
             //checks if food was given to correct character
-            Transform foodColor = this.gameObject.transform.GetChild(0); //this can be easily messed up if we add things so find another way to do this
-            Transform customerColor = col.gameObject.transform.GetChild(2);
+            Transform foodColor = this.gameObject.transform.Find("color");
+            Transform customerColor = col.gameObject.transform.Find("color");
             Debug.Log("food color is " + foodColor.tag);
             Debug.Log("customer color is " + customerColor.tag);
             if (foodColor.tag == customerColor.tag)

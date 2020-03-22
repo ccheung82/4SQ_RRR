@@ -7,20 +7,24 @@ public class Score : MonoBehaviour
 {
 
     public GameObject scoreText;
+    float maxPoints = 500;
+    TextMeshProUGUI currScoreText;
     // Update is called once per frame
 
     void Start()
     {
-        Score scoreScript = GameObject.Find("ScoreManager").GetComponent<Score>();
+        currScoreText = GameObject.Find("MainCanvas").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
     }
     public void ChangeScore(Transform customer)
     {
         float timeLeft = float.Parse(customer.GetChild(0).transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text); //time left in timer
-        float currentScore = float.Parse(scoreText.GetComponent<UnityEngine.UI.Text>().text); //current score
-        Debug.Log(currentScore);
-        currentScore = currentScore + (currentScore * timeLeft);
-        Debug.Log("score after: " + currentScore);
-        scoreText.GetComponent<UnityEngine.UI.Text>().text = currentScore.ToString();
+        //Debug.Log("time left: " + timeLeft);
+        float currentScore = float.Parse(currScoreText.text);//current score
+        //Debug.Log("score before: " + currentScore);
+        currentScore = currentScore + (maxPoints * timeLeft);
+        int intScore = (int) currentScore;
+        //Debug.Log("score after: " + currentScore);
+        currScoreText.text = intScore.ToString();
     }
 }
