@@ -22,17 +22,17 @@ public class FoodTimeOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (holding == false)
-        {
-            StartCoroutine(WaitAndDestroy());
-        }
+        // if (holding == false)
+        // {
+        //     StartCoroutine(WaitAndDestroy());
+        // }
     }
 
-    IEnumerator WaitAndDestroy()
-    {
-        yield return new WaitForSeconds(5);
-        Destroy(this.gameObject);
-    }
+    // IEnumerator WaitAndDestroy()
+    // {
+    //     yield return new WaitForSeconds(5);
+    //     Destroy(this.gameObject);
+    // }
 
     void OnCollisionEnter(Collision col)
     {
