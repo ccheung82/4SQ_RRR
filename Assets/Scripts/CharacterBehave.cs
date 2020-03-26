@@ -24,12 +24,23 @@ public class CharacterBehave : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+
+        switch(difficulty){         //difficulty translation logic 1-3 (easy-hard), translates to # of customers (2,4,6)
+            case 1: 
+                difficulty = 2;
+                break;
+            case 2:
+                difficulty = 4;
+                break;
+            case 3:
+                difficulty = 6;
+                break;
+            default:
+                difficulty = 2;
+                break;
+        }
         holdingFood = false;        //no food till food is generated
         FirstFood();                //generates first food @ start of game
-
-        //food.GetComponent<Rigidbody>().useGravity = false;
-        //color = GetComponent<Renderer>();
-        
     }
 
     // Update is called once per frame
