@@ -53,15 +53,15 @@ public class CharacterBehave : MonoBehaviour
         // if (holdingFood){
         //     food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
         //     if (Input.GetKeyDown(KeyCode.UpArrow)){
-        //         //food.GetComponent<Rigidbody>().useGravity = true;
+        //         food.GetComponent<Rigidbody>().useGravity = true;
         //         food.GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwForce);
         //         //food.GetComponent<FoodTimeOut>().holding = false;
         //         holdingFood = false;
         //     }
-        //     //if (Input.GetKeyDown(KeyCode.DownArrow)) {
-        //     //    Destroy(food);
-        //     //}
-        // }
+            //if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            //    Destroy(food);
+            //}
+        //}
         // else{
         //     if (Input.GetKeyUp(KeyCode.UpArrow)){
                 
@@ -77,14 +77,17 @@ public class CharacterBehave : MonoBehaviour
         //     }
         // }
         
-        //spawner.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance;
-        //food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
+        //spawner.transform.position = playerCam.transform.position + playerCam.transform.forward;
+        //food.transform.position = spawner.transform.position + spawner.transform.forward;
         
+
         if(Input.GetKeyUp(KeyCode.UpArrow)){
             Destroy(GameObject.FindWithTag("food"));
             holdingFood = false;
             GenRandom();
         }
+
+
 
     }
 

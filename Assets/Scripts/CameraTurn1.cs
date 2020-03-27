@@ -17,9 +17,8 @@ public class CameraTurn1 : MonoBehaviour
 
     //Rotation Speed of camera attached to game object
     private float rotSpeed = 350.0f;
-
-
-
+    public GameObject spawner;
+    public GameObject foodPos;
     Quaternion Rot;
 
     float timeCount = 0.0f;
@@ -34,7 +33,8 @@ public class CameraTurn1 : MonoBehaviour
     void LateUpdate()
     {
 
-        if ((Input.GetKeyDown(KeyCode.D)) || Input.GetKeyUp(KeyCode.RightArrow))
+        //turn left
+        if ((Input.GetKeyDown(KeyCode.A)) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
 
             if (currentObj != objs.Length - 1)
@@ -45,13 +45,13 @@ public class CameraTurn1 : MonoBehaviour
             else
             {
                 currentObj = 0;
-               // Debug.Log(currentObj);
+                //Debug.Log(currentObj);
             }
 
         }
 
-        //Turn Left to Next Obj
-        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) /*|| rotSpinLeft*/))
+        //turn right
+        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)))
         {
             //Sets current obj to look at
             if (currentObj != 0)
@@ -89,22 +89,7 @@ public class CameraTurn1 : MonoBehaviour
         //Rotates the player by checking what the rotation of the player is every frame and increments it close to the intended rotation
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Rot, Time.deltaTime * rotSpeed);
 
-
-
-        /**********************************************************************************/
-        //if (this.transform.rotation != Rot) 
-        //{
-        //    this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Rot, timeCount);
-        //    timeCount += Time.deltaTime;
-        //}
-        //else
-        //{
-        //    timeCount = 0;
-        //}
-        //Rotates and slows down rotation speed
-        /*this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                                    Quaternion.LookRotation(direction),
-                                                     Time.deltaTime * rotSpeed);*/
+        //objs[currentObj]
 
     }
 
