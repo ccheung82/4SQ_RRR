@@ -41,8 +41,9 @@ GameObject:
   - component: {fileID: 4995255701132264516}
   - component: {fileID: 3542950221355970074}
   - component: {fileID: 2911280217584372034}
-  - component: {fileID: -6523666980481791533}
-  - component: {fileID: -4831444979664182220}
+  - component: {fileID: -8978820094767419285}
+  - component: {fileID: -6706057798011557224}
+  - component: {fileID: 3721446863608628454}
   m_Layer: 0
   m_Name: food2_prefab
   m_TagString: nextFood
@@ -111,20 +112,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &-6523666980481791533
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8078249210888250391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-4831444979664182220
+--- !u!54 &-8978820094767419285
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,3 +128,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-6706057798011557224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078249210888250391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1325824, y: 2.5727274, z: 2.1325839}
+  m_Center: {x: 0.00000017881392, y: 0.28636345, z: -0.00000011920928}
+--- !u!114 &3721446863608628454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078249210888250391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb0689628e4945c2b2c05ef152a8fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

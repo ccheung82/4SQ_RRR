@@ -8,26 +8,10 @@ public class CameraTurn1 : MonoBehaviour
     /* PLACE SCRIPT ON PLAYER, then set as many animals to serve in the player's Unity inspector, then
      drag each individual animal in with the starting animal to look at being element 0 and adding the
      others counter clockwise*/
-
-    //Create list of Game Objects to obtain position of for rotation
-    public GameObject[] objs;
-
-    //Starting object to look at is 0
-    int currentObj = 0;
-
-    //Rotation Speed of camera attached to game object
-    private float rotSpeed = 350.0f;
-    public GameObject spawner;
-    public GameObject foodPos;
+    public GameObject[] objs;   //Create list of Game Objects to obtain position of for rotation
+    int currentObj = 0; //Starting object to look at is 0
+    private float rotSpeed = 350.0f;    //Rotation Speed of camera attached to game object
     Quaternion Rot;
-
-    float timeCount = 0.0f;
-
-
-    private void Start()
-    {
-        Debug.Log(objs.Length);
-    }
 
     // Update is called once per frame
     void LateUpdate()
@@ -79,20 +63,12 @@ public class CameraTurn1 : MonoBehaviour
         //Sets how to rotate
         Rot = Quaternion.LookRotation(direction, Vector3.up);
 
-        //Debug.Log(Rot);
-
-        //Debug.Log(currentObj);
-        
-        //Debug.Log("Rotating");
-
-
         //Rotates the player by checking what the rotation of the player is every frame and increments it close to the intended rotation
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Rot, Time.deltaTime * rotSpeed);
 
-        //objs[currentObj]
-
     }
 
+    //getter for currentObj index
     public int get_curr_obj(){
         return this.currentObj;
     }

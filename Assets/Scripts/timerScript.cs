@@ -51,12 +51,13 @@ public class timerScript : MonoBehaviour
         doOnce = false;
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "customer")
-        {
-            resetTimer();
-        }
-    }
+    // void OnCollisionEnter(Collision collision) {
+    //     if (collision.gameObject.tag == "customer")
+    //     {
+    //         Debug.Log("TIMER COLLISION");
+    //         resetTimer();
+    //     }
+    // }
 
     void GameOver()
     {
