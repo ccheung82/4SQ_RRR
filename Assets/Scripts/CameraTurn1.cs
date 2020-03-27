@@ -93,5 +93,9 @@ public class CameraTurn1 : MonoBehaviour
 
     }
 
+    public int get_curr_obj(){
+        return this.currentObj;
+    }
 
 }
+

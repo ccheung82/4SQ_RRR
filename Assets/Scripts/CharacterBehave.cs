@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterBehave : MonoBehaviour
 {
 
@@ -14,11 +15,12 @@ public class CharacterBehave : MonoBehaviour
 
     //public float foodDistance = 0.5f;
     //public float throwForce = 2000f;
-    public bool holdingFood = true;
+    public bool holdingFood;
     //public bool startFood = true;
     public int difficulty;
     private int randomInt1;
     private int randomInt2;
+    private float timeTaken = 3;
 
 
 
@@ -45,7 +47,7 @@ public class CharacterBehave : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-
+        
         //spawner.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance;
         //food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
         //nextFood.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance - playerCam.transform.up * 0.3f;
@@ -82,7 +84,21 @@ public class CharacterBehave : MonoBehaviour
         
 
         if(Input.GetKeyUp(KeyCode.UpArrow)){
-            Destroy(GameObject.FindWithTag("food"));
+
+            CameraTurn1 camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn1>() as CameraTurn1;
+            
+            //Destroy(GameObject.FindWithTag("food"));
+            Vector3 startpos = food.transform.position;
+            Vector3 endpos = customers[camClass.get_curr_obj()].transform.position + Vector3.forward * 200f;
+            float currTime = 0;
+
+            currTime += Time.deltaTime;
+            if(currTime > timeTaken){
+                currTime = timeTaken;
+            }
+
+            float perc = currTime/timeTaken;
+            food.transform.position = Vector3.Lerp(startpos, endpos, perc);
             holdingFood = false;
             GenRandom();
         }
