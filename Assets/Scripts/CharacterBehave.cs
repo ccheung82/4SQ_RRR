@@ -6,8 +6,7 @@ using UnityEngine;
 public class CharacterBehave : MonoBehaviour
 {
 
-    private GameObject food;
-    public GameObject spawner;
+    public GameObject food;
     public GameObject playerCam;
     public GameObject nextFood;
     public GameObject[] foods;
@@ -50,8 +49,9 @@ public class CharacterBehave : MonoBehaviour
 
             CameraTurn1 camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn1>() as CameraTurn1;   //instantiate for cross script use
             
-            Vector3 startpos = food.transform.position; //initial food position
-            Vector3 endpos = customers[camClass.get_curr_obj()].transform.position + Vector3.forward * 100f;    //position of customer
+            Vector3 movement = food.transform.rotation * Vector3.forward;
+            Vector3 startpos = food.transform.GetChild(0).position; //initial food position
+            Vector3 endpos = customers[camClass.get_curr_obj()].transform.position + movement * 100f;    //position of customer
             
             //food tossing algorithm
             float currTime = 0;
@@ -76,7 +76,7 @@ public class CharacterBehave : MonoBehaviour
         randomInt1 = Random.Range(0, difficulty);       //generate random seeds for food selection
         randomInt2 = Random.Range(0, difficulty);
 
-        food = Instantiate(nextFood, spawner.transform.position, spawner.transform.rotation);   //create new food
+        food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
         food.tag = "food";  //set tag for deletion and access
         holdingFood = true; //player status update
 
@@ -86,7 +86,7 @@ public class CharacterBehave : MonoBehaviour
     
     //generate initialization of food/nextfood
     void FirstFood(){
-        food = Instantiate(foods[Random.Range(0, difficulty)],spawner.transform.position, spawner.transform.rotation);
+        food = Instantiate(foods[Random.Range(0, difficulty)],playerCam.transform.position, playerCam.transform.rotation);
         food.tag = "food";
 
         nextFood = foods[Random.Range(0, difficulty)];

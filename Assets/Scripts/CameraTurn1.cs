@@ -16,6 +16,7 @@ public class CameraTurn1 : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        CharacterBehave charClass = GameObject.Find("Player").GetComponent<CharacterBehave>() as CharacterBehave;   //instantiate for cross script use
 
         //turn left
         if ((Input.GetKeyDown(KeyCode.A)) || Input.GetKeyUp(KeyCode.LeftArrow))
@@ -65,7 +66,7 @@ public class CameraTurn1 : MonoBehaviour
 
         //Rotates the player by checking what the rotation of the player is every frame and increments it close to the intended rotation
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Rot, Time.deltaTime * rotSpeed);
-
+        charClass.food.transform.rotation = Quaternion.RotateTowards(charClass.food.transform.rotation, Rot, Time.deltaTime * rotSpeed);
     }
 
     //getter for currentObj index
