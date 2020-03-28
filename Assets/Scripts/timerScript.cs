@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class timerScript : MonoBehaviour
 {
@@ -9,46 +10,54 @@ public class timerScript : MonoBehaviour
     [SerializeField] float mainTimer;
     [SerializeField] Image timerIcon;
 
-    float timer; //timer 
+    decimal timer; //timer 
     bool canCount = true; //should the timer decrease
     bool doOnce = false; 
+    public bool resetBool = false;
 
     void Start()
     {
-        timer = mainTimer;
+        timer = (decimal)mainTimer;
     }
 
     void Update()
     {
-        if (timer >= 0.0f && canCount) //timer is active and enabled
+        if (timer >= 0 && canCount) //timer is active and enabled
         {
-            timer -= Time.deltaTime;
-            uiText.text = timer.ToString("F");
-            timerIcon.fillAmount = timer / mainTimer; // updates the images fill value
+            timer -= (decimal)Time.deltaTime;
+            int rounded = (int)Decimal.Truncate(timer);
+            uiText.text = rounded.ToString("F");
+            timerIcon.fillAmount = (float)timer / mainTimer; // updates the images fill value
         }
 
-        else if (timer <= 0.0f && !doOnce) //timer is dead
+        else if (timer <= 0 && !doOnce) //timer is dead
         {
             canCount = false;
             doOnce = true;
-            uiText.text = "0.0";
-            timer = 0.0f;
+            uiText.text = "0";
+            timer = 0;
             GameOver();
+        }
+
+        if(resetBool) {
+            resetTimer();
+            resetBool = false;
         }
     }
 
-    public void ResetBtn()
-    {
-        timer = mainTimer;
+    public void resetTimer() {
+        timer = (decimal)mainTimer;
         canCount = true;
         doOnce = false;
     }
 
-    public void resetTimer() {
-        timer = mainTimer;
-        canCount = true;
-        doOnce = false;
-    }
+    // void OnCollisionEnter(Collision collision) {
+    //     if (collision.gameObject.tag == "customer")
+    //     {
+    //         Debug.Log("TIMER COLLISION");
+    //         resetTimer();
+    //     }
+    // }
 
     void GameOver()
     {
