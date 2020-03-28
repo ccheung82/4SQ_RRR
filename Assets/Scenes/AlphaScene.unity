@@ -1590,14 +1590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c955e8b391ba7463f8a46a41f9134bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 1766736988}
+  food: {fileID: 0}
   playerCam: {fileID: 2056400993}
   nextFood: {fileID: 720777255}
   foods:
-  - {fileID: 709999263250875931, guid: 58f06c1966ed442d8b119c34cf7a250f, type: 3}
-  - {fileID: 8078249210888250391, guid: 1ad7c4519ee67477bbedbd4aecedf5be, type: 3}
-  - {fileID: 3532257022428434166, guid: 8506ba024dd194a6eb89fe886df1097c, type: 3}
-  - {fileID: 2767546406118505195, guid: d9fde4710da2f4439a229a8578715c88, type: 3}
+  - {fileID: 8322398856526705881, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}
+  - {fileID: 9210569937451325141, guid: 97fd4f89fafef47a1af0df1a38559db9, type: 3}
+  - {fileID: 7905901979390313554, guid: 2ceff95d7f1e5461db1d792bb53dcc67, type: 3}
+  - {fileID: 2512334656476915156, guid: f17f546ae751b4b30b06e13e5ac2a4be, type: 3}
   customers:
   - {fileID: 1105916329}
   - {fileID: 329640293}

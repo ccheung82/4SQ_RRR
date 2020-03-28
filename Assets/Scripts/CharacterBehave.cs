@@ -47,7 +47,7 @@ public class CharacterBehave : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.UpArrow)){
 
-            CameraTurn1 camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn1>() as CameraTurn1;   //instantiate for cross script use
+            CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
             
             Vector3 movement = food.transform.rotation * Vector3.forward;
             Vector3 startpos = food.transform.GetChild(0).position; //initial food position
