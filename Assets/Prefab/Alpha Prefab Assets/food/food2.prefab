@@ -87,10 +87,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: food2
       objectReference: {fileID: 0}
+    - target: {fileID: 8322398856526705881, guid: 3b9073f1126c140a8a14cfe8ddc71f6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: green
+      objectReference: {fileID: 0}
     - target: {fileID: 8659704388505223166, guid: 3b9073f1126c140a8a14cfe8ddc71f6f,
         type: 3}
       propertyPath: m_Name
       value: food2_prefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1526634984041985031, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}
+    - {fileID: 8421109759292394589, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}

@@ -77,20 +77,16 @@ public class CharacterBehave : MonoBehaviour
         randomInt2 = Random.Range(0, difficulty);
 
         food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
-        food.tag = "food";  //set tag for deletion and access
         holdingFood = true; //player status update
 
         nextFood = foods[randomInt2];   //next food generated
-        nextFood.tag = "nextFood";  //next food tag set
     }
     
     //generate initialization of food/nextfood
     void FirstFood(){
         food = Instantiate(foods[Random.Range(0, difficulty)],playerCam.transform.position, playerCam.transform.rotation);
-        food.tag = "food";
 
         nextFood = foods[Random.Range(0, difficulty)];
-        nextFood.tag = "nextFood";
 
         holdingFood = true;
     }
