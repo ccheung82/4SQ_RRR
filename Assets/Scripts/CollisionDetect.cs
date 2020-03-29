@@ -5,16 +5,14 @@ using UnityEngine;
 public class CollisionDetect : MonoBehaviour
 {
     void OnCollisionEnter(Collision col){
-
-        Destroy(this.gameObject);    //delete food on collision
-
         // Debug.Log("food tag " + this.gameObject.tag);
         // Debug.Log("col tag " + col.gameObject.tag);
 
-        if(this.gameObject.tag == col.gameObject.tag){
-            Debug.Log("the boi");
+
+        if(this.gameObject.tag == col.gameObject.tag){  //reset timer on correct hit
+            col.gameObject.transform.GetChild(0).GetChild(3).GetComponent<timerScript>().resetTimer();
         }
        
-
+       Destroy(this.gameObject);    //delete food on collision
     }
 }

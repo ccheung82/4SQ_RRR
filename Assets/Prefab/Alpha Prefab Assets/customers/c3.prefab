@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4958560913725173730}
   - component: {fileID: 7594734573782004535}
   m_Layer: 0
-  m_Name: c3 1
+  m_Name: c3
   m_TagString: customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,8 +433,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.9, z: 1.65}
   m_LocalScale: {x: 27.504372, y: 27.504372, z: 27.504372}
   m_Children:
-  - {fileID: 4958560913743863991}
   - {fileID: 4958560914755886451}
+  - {fileID: 4958560913743863991}
   - {fileID: 4958560914696981091}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -521,7 +521,7 @@ Transform:
   - {fileID: 4958560913541948501}
   - {fileID: 4958560914126847289}
   m_Father: {fileID: 4958560913725173734}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4958560913847655370
 GameObject:
@@ -1021,7 +1021,7 @@ RectTransform:
   - {fileID: 4958560913692088062}
   - {fileID: 4958560913408752916}
   m_Father: {fileID: 4958560913725173734}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

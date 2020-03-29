@@ -25,7 +25,8 @@ public class timerScript : MonoBehaviour
         if (timer >= 0 && canCount) //timer is active and enabled
         {
             timer -= (decimal)Time.deltaTime;
-            int rounded = (int)Decimal.Truncate(timer);
+            int rounded = (int)(Decimal.Truncate(timer));
+            Debug.Log(rounded);
             uiText.text = rounded.ToString("F");
             timerIcon.fillAmount = (float)timer / mainTimer; // updates the images fill value
         }
