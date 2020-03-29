@@ -44,6 +44,9 @@ public class CharacterBehave : MonoBehaviour
     // Update is called once per frame
     void Update(){
         
+        if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true){
+            Debug.Log("GG");
+        }
 
         if(Input.GetKeyUp(KeyCode.UpArrow)){
 

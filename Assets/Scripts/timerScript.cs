@@ -26,7 +26,6 @@ public class timerScript : MonoBehaviour
         {
             timer -= (decimal)Time.deltaTime;
             int rounded = (int)(Decimal.Truncate(timer));
-            Debug.Log(rounded);
             uiText.text = rounded.ToString();
             timerIcon.fillAmount = (float)timer / mainTimer; // updates the images fill value
         }
@@ -37,7 +36,8 @@ public class timerScript : MonoBehaviour
             doOnce = true;
             uiText.text = "0";
             timer = 0;
-            GameOver();
+
+            GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
         }
 
         if(resetBool) {
@@ -59,9 +59,4 @@ public class timerScript : MonoBehaviour
     //         resetTimer();
     //     }
     // }
-
-    void GameOver()
-    {
-        //Load a new scene
-    }
 }
