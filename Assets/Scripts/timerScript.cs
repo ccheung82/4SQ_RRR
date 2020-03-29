@@ -27,7 +27,7 @@ public class timerScript : MonoBehaviour
             timer -= (decimal)Time.deltaTime;
             int rounded = (int)(Decimal.Truncate(timer));
             Debug.Log(rounded);
-            uiText.text = rounded.ToString("F");
+            uiText.text = rounded.ToString();
             timerIcon.fillAmount = (float)timer / mainTimer; // updates the images fill value
         }
 
