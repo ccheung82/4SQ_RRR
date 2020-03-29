@@ -11,6 +11,9 @@ public class CollisionDetect : MonoBehaviour
 
         if(this.gameObject.tag == col.gameObject.tag){  //reset timer on correct hit
             col.gameObject.transform.GetChild(0).GetChild(3).GetComponent<timerScript>().resetTimer();
+            GameObject.FindWithTag("scoreSystem").GetComponent<Score>().calculateScore(col.gameObject.transform);
+
+        }else{
         }
        
        Destroy(this.gameObject);    //delete food on collision
