@@ -21,7 +21,7 @@ public class RandomGen : MonoBehaviour
     void GenRandom(){
         bool exists = GameObject.FindWithTag("food");
 
-        randomInt = Random.RandomRange(0, level);
+        randomInt = Random.Range(0, level);
         if(exists){
             Destroy(GameObject.FindWithTag("food"));
             Instantiate(spawnees[randomInt],spawnPos.position, spawnPos.rotation);

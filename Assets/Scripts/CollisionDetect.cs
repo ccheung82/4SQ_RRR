@@ -14,7 +14,11 @@ public class CollisionDetect : MonoBehaviour
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().calculateScore(col.gameObject.transform);
 
         }else{
+
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
+            if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver()){
+                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            }
         }
        
        Destroy(this.gameObject);    //delete food on collision
