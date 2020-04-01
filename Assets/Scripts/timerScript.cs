@@ -38,10 +38,6 @@ public class timerScript : MonoBehaviour
             timer = 0;
 
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
-
-            if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver()){
-                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-            }
         }
 
         if(resetBool) {

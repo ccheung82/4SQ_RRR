@@ -12,13 +12,14 @@ public class CollisionDetect : MonoBehaviour
         if(this.gameObject.tag == col.gameObject.tag){  //reset timer on correct hit
             col.gameObject.transform.GetChild(0).GetChild(3).GetComponent<timerScript>().resetTimer();
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().calculateScore(col.gameObject.transform);
+            col.gameObject.GetComponent<CustomerScript>().fedTimes++;
+
+            if(col.gameObject.GetComponent<CustomerScript>().fedTimes >=3){
+                Destroy(col.gameObject);
+            }
 
         }else{
-
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
-            if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver()){
-                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-            }
         }
        
        Destroy(this.gameObject);    //delete food on collision

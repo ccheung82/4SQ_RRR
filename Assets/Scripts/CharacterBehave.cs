@@ -25,16 +25,16 @@ public class CharacterBehave : MonoBehaviour
         //Debug.Log("TEST");
         switch(difficulty){         //difficulty translation logic 1-3 (easy-hard), translates to # of customers (2,4,6)
             case 1: 
-                difficulty = 2;
+                difficulty = 3;
                 break;
             case 2:
-                difficulty = 4;
+                difficulty = 5;
                 break;
             case 3:
-                difficulty = 6;
+                difficulty = 7;
                 break;
             default:
-                difficulty = 2;
+                difficulty = 3;
                 break;
         }
         holdingFood = false;        //no food till food is generated
@@ -45,7 +45,7 @@ public class CharacterBehave : MonoBehaviour
     void Update(){
         
         if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true){
-            Debug.Log("GG");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
 
         if(Input.GetKeyUp(KeyCode.UpArrow)){
@@ -68,6 +68,12 @@ public class CharacterBehave : MonoBehaviour
             food.transform.position = Vector3.Lerp(startpos, endpos, perc);
 
             holdingFood = false;    //update player status
+            GenRandom();
+        }
+
+        //trash can functionality
+        if(Input.GetKeyUp(KeyCode.DownArrow)){
+            Destroy(this.food);
             GenRandom();
         }
 
