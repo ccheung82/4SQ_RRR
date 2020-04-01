@@ -11,11 +11,14 @@ public class CharacterBehave : MonoBehaviour
     public GameObject nextFood;
     public GameObject[] foods;
     public GameObject[] customers;
+    public GameObject[] positions;
     public bool holdingFood;
     public int difficulty;
+    public int nextCustomer;
     private int randomInt1;
     private int randomInt2;
     private float timeTaken = 10;
+    //public Dictionary<GameObject,bool> map;
 
 
 
@@ -37,6 +40,15 @@ public class CharacterBehave : MonoBehaviour
                 difficulty = 3;
                 break;
         }
+
+        //instantiate at start
+        Instantiate(customers[0], positions[0].transform.position, positions[0].transform.rotation);
+        Instantiate(customers[1], positions[1].transform.position, positions[1].transform.rotation);
+        Instantiate(customers[2], positions[2].transform.position, positions[2].transform.rotation);
+        Instantiate(customers[3], positions[3].transform.position, positions[3].transform.rotation);
+
+
+        nextCustomer = difficulty - 1;
         holdingFood = false;        //no food till food is generated
         FirstFood();                //generates first food @ start of game
     }
@@ -98,5 +110,17 @@ public class CharacterBehave : MonoBehaviour
         nextFood = foods[Random.Range(0, difficulty)];
 
         holdingFood = true;
+    }
+
+    //returns current index customer to be generated and calculates the next one
+    public int nextCustomerCalculation(){
+        int currIndex = nextCustomer;
+        nextCustomer++;
+
+        if(nextCustomer == difficulty){
+            nextCustomer = 0;
+        }
+
+        return currIndex;
     }
 }
