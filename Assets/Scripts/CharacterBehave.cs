@@ -18,8 +18,6 @@ public class CharacterBehave : MonoBehaviour
     private int randomInt1;
     private int randomInt2;
     private float timeTaken = 10;
-    //public Dictionary<GameObject,bool> map;
-
 
 
     // Start is called before the first frame update
@@ -61,7 +59,6 @@ public class CharacterBehave : MonoBehaviour
         }
 
         if(Input.GetKeyUp(KeyCode.UpArrow)){
-
             CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
             
             Vector3 movement = food.transform.rotation * Vector3.forward;
@@ -89,10 +86,11 @@ public class CharacterBehave : MonoBehaviour
             GenRandom();
         }
 
-
+        
 
     }
 
+    //food is nextFood and nextFood is newly generated
     void GenRandom(){
         randomInt1 = Random.Range(0, difficulty);       //generate random seeds for food selection
         randomInt2 = Random.Range(0, difficulty);
@@ -122,5 +120,16 @@ public class CharacterBehave : MonoBehaviour
         }
 
         return currIndex;
+    }
+    
+    //work in progress script for replacing when time runs out    
+    public void replaceCustomer(GameObject curr){
+        Vector3 pos = curr.transform.position;
+        Quaternion rot = curr.transform.rotation;
+
+        int index = nextCustomerCalculation();
+        Destroy(curr.gameObject);
+        Instantiate(customers[index], pos, rot);
+        Debug.Log("this is happening");
     }
 }

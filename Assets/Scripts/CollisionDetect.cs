@@ -5,8 +5,8 @@ using UnityEngine;
 public class CollisionDetect : MonoBehaviour
 {
     void OnCollisionEnter(Collision col){
-        Debug.Log("food tag " + this.gameObject.tag);
-        Debug.Log("col tag " + col.gameObject.tag);
+        // Debug.Log("food tag " + this.gameObject.tag);
+        // Debug.Log("col tag " + col.gameObject.tag);
 
 
         if(this.gameObject.tag == col.gameObject.tag){  //reset timer on correct hit
@@ -16,12 +16,7 @@ public class CollisionDetect : MonoBehaviour
 
             //generate next customer
             if(col.gameObject.GetComponent<CustomerScript>().fedTimes >=3){
-                Vector3 pos = col.transform.position;
-                Quaternion rot = col.transform.rotation;
-
-                int index = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehave>().nextCustomerCalculation();
-                Destroy(col.gameObject);
-                Instantiate(GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehave>().customers[index], pos, rot);
+                GameObject.FindWithTag("Player").GetComponent<CharacterBehave>().replaceCustomer(col.gameObject);
             }
 
         }else{

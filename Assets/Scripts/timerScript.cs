@@ -12,7 +12,7 @@ public class timerScript : MonoBehaviour
 
     decimal timer; //timer 
     bool canCount = true; //should the timer decrease
-    bool doOnce = false; 
+    public bool timesUp = false; 
     public bool resetBool = false;
 
     void Start()
@@ -30,10 +30,10 @@ public class timerScript : MonoBehaviour
             timerIcon.fillAmount = (float)timer / mainTimer; // updates the images fill value
         }
 
-        else if (timer <= 0 && !doOnce) //timer is dead
+        else if (timer <= 0 && !timesUp) //timer is dead
         {
             canCount = false;
-            doOnce = true;
+            timesUp = true;
             uiText.text = "0";
             timer = 0;
 
@@ -49,7 +49,7 @@ public class timerScript : MonoBehaviour
     public void resetTimer() {
         timer = (decimal)mainTimer;
         canCount = true;
-        doOnce = false;
+        timesUp = false;
     }
 
     // void OnCollisionEnter(Collision collision) {
