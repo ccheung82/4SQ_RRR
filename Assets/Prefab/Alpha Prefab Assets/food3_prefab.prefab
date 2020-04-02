@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4726989555563623893}
   m_Layer: 0
   m_Name: food3_prefab
-  m_TagString: food
+  m_TagString: nextFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
