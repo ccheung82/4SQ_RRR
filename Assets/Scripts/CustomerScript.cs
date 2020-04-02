@@ -14,10 +14,6 @@ public class CustomerScript : MonoBehaviour{
     }
 
     void Update(){
-        if(this.gameObject.transform.GetChild(0).GetComponent<timerScript>().timesUp){
-            //GameObject.FindWithTag("Player").GetComponent<GenCustomer>().replaceCustomer(this.gameObject);
-            Destroy(this.gameObject);
-        }
         
     }
 }

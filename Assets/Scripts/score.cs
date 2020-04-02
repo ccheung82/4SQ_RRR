@@ -34,8 +34,6 @@ public class Score : MonoBehaviour
         strikeVisual += "x";
         currStrikeText.text = strikeVisual;
         strikeCount++;
-
-
     }
 
     public bool isGameOver(){
