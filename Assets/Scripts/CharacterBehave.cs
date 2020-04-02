@@ -2,116 +2,134 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterBehave : MonoBehaviour
 {
 
-    private GameObject food;
-    public GameObject spawner;
+    public GameObject food;
     public GameObject playerCam;
     public GameObject nextFood;
-    public GameObject[] spawnees;
-    //Renderer color;
-
-    // GameObject newObj;
-    // newObj = new Type("name");
-    // For destroying objects- make a list that can have max 3 components? 
-
-    public float foodDistance = 0.5f;
-    public float throwForce = 2000f;
-    public bool holdingFood = true;
-    public bool startFood = true;
-    public int level;
+    public GameObject[] foods;
+    public GameObject[] customers;
+    public GameObject[] positions;
+    public bool holdingFood;
+    public int difficulty;
+    public int nextCustomer;
     private int randomInt1;
     private int randomInt2;
+    private float timeTaken = 10;
 
-
-    int i = 0;
 
     // Start is called before the first frame update
     void Start(){
-        GenRandom();
-        food.GetComponent<Rigidbody>().useGravity = false;
-        //color = GetComponent<Renderer>();
-        
+
+        //Debug.Log("TEST");
+        switch(difficulty){         //difficulty translation logic 1-3 (easy-hard), translates to # of customers (2,4,6)
+            case 1: 
+                difficulty = 3;
+                break;
+            case 2:
+                difficulty = 5;
+                break;
+            case 3:
+                difficulty = 7;
+                break;
+            default:
+                difficulty = 3;
+                break;
+        }
+
+        //instantiate at start
+        Instantiate(customers[0], positions[0].transform.position, positions[0].transform.rotation);
+        Instantiate(customers[1], positions[1].transform.position, positions[1].transform.rotation);
+        Instantiate(customers[2], positions[2].transform.position, positions[2].transform.rotation);
+        Instantiate(customers[3], positions[3].transform.position, positions[3].transform.rotation);
+
+
+        nextCustomer = difficulty - 1;
+        holdingFood = false;        //no food till food is generated
+        FirstFood();                //generates first food @ start of game
     }
 
     // Update is called once per frame
     void Update(){
-
-        spawner.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance;
-        //food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
-        //nextFood.transform.position = playerCam.transform.position + playerCam.transform.forward * foodDistance - playerCam.transform.up * 0.3f;
-
-        if (holdingFood){
-            food.transform.position = spawner.transform.position + spawner.transform.forward * foodDistance;
-            if (Input.GetKeyDown(KeyCode.UpArrow)){
-                food.GetComponent<Rigidbody>().useGravity = true;
-                food.GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * throwForce);
-                food.GetComponent<FoodTimeOut>().holding = false;
-                holdingFood = false;
-            }
-            //if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            //    Destroy(food);
-            //}
+        
+        if(GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true){
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
-        else{
-            if (Input.GetKeyUp(KeyCode.UpArrow)){
-                
-                // Debug.Log("i: "+ i);
-                // if (i < (colors.Length - 1)) {
-                //     i++;
-                // }
-                // else {
-                //     i = 0;
-                // }
-                holdingFood = true;
-                GenRandom();
-            }
-        }
-    }
 
-    GameObject GenRandom(){
-        bool exists = GameObject.FindWithTag("food");
-        randomInt1 = Random.Range(0, level);
-        randomInt2 = Random.Range(0, level);
+        if(Input.GetKeyUp(KeyCode.UpArrow)){
+            CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
+            
+            Vector3 movement = food.transform.rotation * Vector3.forward;
+            Vector3 startpos = food.transform.GetChild(0).position; //initial food position
+            Vector3 endpos = customers[camClass.get_curr_obj()].transform.position + movement * 100f;    //position of customer
+            
+            //food tossing algorithm
+            float currTime = 0;
+
+            currTime += Time.deltaTime;
+            if(currTime > timeTaken){
+                currTime = timeTaken;
+            }
+
+            float perc = currTime/timeTaken;
+            food.transform.position = Vector3.Lerp(startpos, endpos, perc);
+
+            holdingFood = false;    //update player status
+            GenRandom();
+        }
+
+        //trash can functionality
+        if(Input.GetKeyUp(KeyCode.DownArrow)){
+            Destroy(this.food);
+            GenRandom();
+        }
 
         
-        if(exists){
-            
-            //Destroy(GameObject.FindWithTag("food"));
-
-            food = nextFood;
-            food.tag = "food";
-            nextFood = spawnees[randomInt1];
-            nextFood.tag = "nextFood";
-
-            return food;
-        }else{
-            food = Instantiate(spawnees[randomInt1],spawner.transform.position, spawner.transform.rotation);
-            food.tag = "food";
-            nextFood = spawnees[randomInt2];
-            nextFood.tag = "nextFood";
-            return food;
-        }
 
     }
+
+    //food is nextFood and nextFood is newly generated
+    void GenRandom(){
+        randomInt1 = Random.Range(0, difficulty);       //generate random seeds for food selection
+        randomInt2 = Random.Range(0, difficulty);
+
+        food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
+        holdingFood = true; //player status update
+
+        nextFood = foods[randomInt2];   //next food generated
+    }
     
-    //    IEnumerator WaitAndDestroy()
-    //{
-    //    yield return new WaitForSeconds(5);
-    //    Destroy(GameObject.FindWithTag("food"));
-    //}
+    //generate initialization of food/nextfood
+    void FirstFood(){
+        food = Instantiate(foods[Random.Range(0, difficulty)],playerCam.transform.position, playerCam.transform.rotation);
 
+        nextFood = foods[Random.Range(0, difficulty)];
 
-    // void NewFood()
-    // {
-    //     Instantiate(food, spawner.transform.position, spawner.transform.rotation);
-    //     if (i < colors.Length - 1)
-    //         food.GetComponent<Renderer>().material = colors[i];
-    //     else
-    //         food.GetComponent<Renderer>().material = colors[colors.Length-1];
-    // // }
-    // void UpdateNextFood() {
-    //     nextFood.GetComponent<Renderer>().material = colors[i];
-    // }
+        holdingFood = true;
+    }
+
+    //returns current index customer to be generated and calculates the next one
+    public int nextCustomerCalculation(){
+        int currIndex = nextCustomer;
+        nextCustomer++;
+
+        if(nextCustomer == difficulty){
+            nextCustomer = 0;
+        }
+
+        return currIndex;
+    }
+    
+    //work in progress script for replacing when time runs out    
+    public void replaceCustomer(GameObject curr){
+        Vector3 pos = curr.transform.position;
+        Quaternion rot = curr.transform.rotation;
+
+        int index = nextCustomerCalculation();
+        Destroy(curr.gameObject);
+        Instantiate(customers[index], pos, rot);
+        Debug.Log("this is happening");
+    }
 }

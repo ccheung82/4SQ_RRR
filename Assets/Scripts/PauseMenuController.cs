@@ -45,7 +45,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void Back2MainMenu()
     {
-        SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

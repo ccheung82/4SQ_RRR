@@ -30,7 +30,7 @@ public class MenuController : MonoBehaviour
 
     public void ContinueButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void CreditsButtonClicked()

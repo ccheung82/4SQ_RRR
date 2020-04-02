@@ -12,6 +12,9 @@ TagManager:
   - green
   - red
   - purple
+  - scoreSystem
+  - brown
+  - orange
   layers:
   - Default
   - TransparentFX
