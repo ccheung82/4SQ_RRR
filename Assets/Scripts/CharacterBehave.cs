@@ -109,7 +109,7 @@ public class CharacterBehave : MonoBehaviour
         randomInt2 = Random.Range(0, difficulty);
 
         bool foodVal = inUse[foods[randomInt2].tag];
-        Debug.Log(randomInt2 + " " + foods[randomInt2].tag + " " + foodVal);
+        // Debug.Log(randomInt2 + " " + foods[randomInt2].tag + " " + foodVal);
         if (foodVal == true)
         {
 
@@ -168,7 +168,7 @@ public class CharacterBehave : MonoBehaviour
 
         Destroy(curr.gameObject);
         Instantiate(customers[index], pos, rot);
-        Debug.Log("this is happening");
+        // Debug.Log("this is happening");
 
         for (int i = 0; i < difficulty; i++)
         {

@@ -14,6 +14,7 @@ public class timerScript : MonoBehaviour
     bool canCount = true; //should the timer decrease
     public bool timesUp = false; 
     public bool resetBool = false;
+    public GameObject cxTimeOut; 
 
     void Start()
     {
@@ -38,6 +39,11 @@ public class timerScript : MonoBehaviour
             timer = 0;
 
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
+
+            //store GameObject of parent who ran out of time
+            cxTimeOut = transform.parent.parent.gameObject;
+            Debug.Log(cxTimeOut.tag);
+            GameObject.FindWithTag("Player").GetComponent<CharacterBehave>().replaceCustomer(cxTimeOut);
         }
 
         if(resetBool) {
@@ -52,11 +58,4 @@ public class timerScript : MonoBehaviour
         timesUp = false;
     }
 
-    // void OnCollisionEnter(Collision collision) {
-    //     if (collision.gameObject.tag == "customer")
-    //     {
-    //         Debug.Log("TIMER COLLISION");
-    //         resetTimer();
-    //     }
-    // }
 }
