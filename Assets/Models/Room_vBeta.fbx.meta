@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 33ad0041d42435a4c8ad28d9dcecc927
+guid: 13acd8af6a482e24b97a2a8813337971
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Accent
-    second: {fileID: 2100000, guid: c2789738affa4eb49a0366de434b96a6, type: 2}
+      name: Lamp
+    second: {fileID: 2100000, guid: 3a6b8aa9d4950554d959762e15cd90b6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Eye_white
-    second: {fileID: 2100000, guid: f8dcebe53641358488d7219d9f305e44, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eyeball
-    second: {fileID: 2100000, guid: 645d48fb142c5044e88d542751d6b973, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fur
-    second: {fileID: 2100000, guid: 245d44a68e32aac47a7a44e47812dbea, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: 1145981b34b02a242a5aa5dfb3136149, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
