@@ -51,7 +51,7 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   mode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensity:
     overrideState: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     overrideState: 1
     value: 0.1
   aperture:
-    overrideState: 0
-    value: 0.1
+    overrideState: 1
+    value: 0.9
   focalLength:
     overrideState: 0
     value: 50

@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 9335a3b5f667a2f48a0052c5680c54b8
+guid: c44d6456428a068498482eebdd5b4de5
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: d3c975978cbae6d43aa9802a65e52669, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp
+    second: {fileID: 2100000, guid: 9896ae59c37033c4e9c09244521c588a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RoomMAT
+    second: {fileID: 2100000, guid: 55573099dd0365f4a8fdd6ffa7edb290, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

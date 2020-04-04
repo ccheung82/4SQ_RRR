@@ -3,7 +3,27 @@ guid: 412334900af97594b9ec4a29d2bd560e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Accent
+    second: {fileID: 2100000, guid: 2e33237f3baf23b4ab9747336ebdc33f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_white
+    second: {fileID: 2100000, guid: 2cad2260f5af0564fbe2c22400e7ed44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyeball
+    second: {fileID: 2100000, guid: f798ac4067dfdfa43b9c3f6bea971170, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fur
+    second: {fileID: 2100000, guid: 053ec8c96506b8c49ad2904133d3a41d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
