@@ -37,7 +37,7 @@ public class Score : MonoBehaviour
     }
 
     public bool isGameOver(){
-        if(strikeCount == 3){
+        if(strikeCount >= 3){
             return true;
         }
 
