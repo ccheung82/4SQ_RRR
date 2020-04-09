@@ -8,22 +8,26 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Accent
-    second: {fileID: 2100000, guid: c2789738affa4eb49a0366de434b96a6, type: 2}
+    second: {fileID: 2100000, guid: 0a2841765e9991141b155c03ef01883e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eye_white
-    second: {fileID: 2100000, guid: f8dcebe53641358488d7219d9f305e44, type: 2}
+    second: {fileID: 2100000, guid: ff805dc1ab25902428f25c835b77749e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyeball
-    second: {fileID: 2100000, guid: 645d48fb142c5044e88d542751d6b973, type: 2}
+    second: {fileID: 2100000, guid: b64ccb3fb2c56c04bbafc560513c87fa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fur
+<<<<<<< Updated upstream
     second: {fileID: 2100000, guid: 245d44a68e32aac47a7a44e47812dbea, type: 2}
+=======
+    second: {fileID: 2100000, guid: 445e652d14aa9ec4db06230c0f145c04, type: 2}
+>>>>>>> Stashed changes
   materials:
     importMaterials: 1
     materialName: 0
@@ -107,7 +111,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

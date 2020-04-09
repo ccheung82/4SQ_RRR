@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: blue2
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: -6465566751694194690, guid: 0a230d53daf39e746ae269187621fe8b,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_FEF6E74F:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,6 +61,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_158918A3: 0
+    - Vector1_174F01FA: 0
+    - Vector1_94521CC7: 0
+    - Vector1_E9376897: 0.034
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -73,5 +82,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_58A5A155: {r: 0, g: 0, b: 0, a: 0}
+    - Color_89D619D9: {r: 0.21791564, g: 0.6414878, b: 0.7830189, a: 1}
+    - Color_E80824B0: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
     - _Color: {r: 0.21791564, g: 0.6414878, b: 0.7830189, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
