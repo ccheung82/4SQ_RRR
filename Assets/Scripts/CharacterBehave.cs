@@ -16,7 +16,7 @@ public class CharacterBehave : MonoBehaviour
     public int difficulty;
     public int nextCustomer;
     private int randomInt1;
-    private int randomInt2;
+    private int randomInt;
     private float timeTaken = 10;
     private Dictionary<string, bool> inUse = new Dictionary<string, bool>();
 
@@ -100,28 +100,37 @@ public class CharacterBehave : MonoBehaviour
             GenRandom();
         }
 
+        if (inUse[this.food.tag] == false) {
+            Destroy(this.food);
+            GenRandom();
+        }
+
     }
 
     //food is nextFood and nextFood is newly generated
     void GenRandom()
-    {
-        randomInt1 = Random.Range(0, difficulty);       //generate random seeds for food selection
-        randomInt2 = Random.Range(0, difficulty);
+    {     
+        randomInt = Random.Range(0, difficulty); //generate random seeds for food selection
 
-        bool foodVal = inUse[foods[randomInt2].tag];
-        // Debug.Log(randomInt2 + " " + foods[randomInt2].tag + " " + foodVal);
+        bool foodVal = inUse[foods[randomInt].tag];
         if (foodVal == true)
         {
+
+            nextFood = foods[randomInt];   //next food generated
 
             food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
             holdingFood = true; //player status update
 
-            nextFood = foods[randomInt2];   //next food generated
+            
         }
         else
         {
             GenRandom();
         }
+    }
+
+    void updateActiveCustomers() {
+
     }
 
     //generate initialization of food/nextfood
