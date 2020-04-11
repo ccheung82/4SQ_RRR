@@ -26,28 +26,30 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void LoadGameScene(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-
+    public void LevelSelect() {
+        SceneManager.LoadScene(1);
+    }
     public void GameOver()
-    {
-        SceneManager.LoadScene(2);
-    }
-    public void EasyLevel() {
-        SceneManager.LoadScene(4);
-    }
-    public void MediumLevel()
     {
         SceneManager.LoadScene(5);
     }
+    public void EasyLevel() {
+        SceneManager.LoadScene(2);
+    }
+    public void MediumLevel()
+    {
+        SceneManager.LoadScene(3);
+    }
     public void HardLevel()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(4);
     }
 }
 
