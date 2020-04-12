@@ -10,13 +10,14 @@ public class Score : MonoBehaviour
     float maxPoints = 100;
     TextMeshProUGUI currScoreText;
     TextMeshProUGUI currStrikeText;
-    public GameObject strikes;
     public string strikeVisual;
-    public int strikeCount = 0;
+    public int strikeCount;
     // Update is called once per frame
 
     void Start()
-    {
+    {   
+        strikeCount = 3;
+        strikeVisual = "xxx";
         currScoreText = GameObject.Find("MainCanvas").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         currStrikeText = GameObject.Find("MainCanvas").transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
@@ -31,16 +32,20 @@ public class Score : MonoBehaviour
     }
 
     public void addStrike(){
-        strikeVisual += "x";
+        if(strikeVisual != ""){
+        strikeVisual = strikeVisual.Remove(strikeVisual.Length - 1, 1); 
+        }
         currStrikeText.text = strikeVisual;
-        strikeCount++;
+        strikeCount--;
     }
 
     public bool isGameOver(){
-        if(strikeCount >= 3){
+        Debug.Log(strikeCount);
+        if(strikeCount <= 0){
             return true;
         }
 
         return false;
     }
+    
 }

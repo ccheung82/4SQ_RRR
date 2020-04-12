@@ -69,7 +69,8 @@ public class CharacterBehave : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        
+        if (Input.GetKeyUp(KeyCode.UpArrow) && GameObject.Find("Main Camera").GetComponent<CameraTurn>().canThrow)
         {
             CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
 
