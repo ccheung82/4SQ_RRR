@@ -13,6 +13,7 @@ public class MenuController : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject continueButton;
     public GameObject backButton;
+    [SerializeField] GameObject levLoader;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class MenuController : MonoBehaviour
 
     public void ContinueButtonClicked()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        GameObject.FindWithTag("loader").GetComponent<LevelLoader>().loadNextLevel();
     }
 
     public void CreditsButtonClicked()
