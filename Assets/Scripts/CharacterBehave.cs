@@ -8,6 +8,7 @@ public class CharacterBehave : MonoBehaviour
 
     public GameObject food;
     public GameObject playerCam;
+    public GameObject foodSpawnPos;
     public GameObject nextFood;
     public GameObject[] foods;
     public GameObject[] customers;
@@ -17,7 +18,7 @@ public class CharacterBehave : MonoBehaviour
     public int nextCustomer;
     private int randomInt1;
     private int randomInt;
-    private float timeTaken = 10;
+    private float timeTaken = 1000;
     private Dictionary<string, bool> inUse = new Dictionary<string, bool>();
 
 
@@ -85,6 +86,7 @@ public class CharacterBehave : MonoBehaviour
             if (currTime > timeTaken)
             {
                 currTime = timeTaken;
+                Debug.Log("currTime");
             }
 
             float perc = currTime / timeTaken;
@@ -119,7 +121,7 @@ public class CharacterBehave : MonoBehaviour
 
             nextFood = foods[randomInt];   //next food generated
 
-            food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
+            food = Instantiate(nextFood, foodSpawnPos.transform.position, playerCam.transform.rotation);   //create new food
             holdingFood = true; //player status update
 
             
@@ -142,7 +144,7 @@ public class CharacterBehave : MonoBehaviour
 
         if (inUse[foods[rand1].tag] == true && inUse[foods[rand2].tag] == true) //checks to see if the corresponding customer is in the scene
         {
-            food = Instantiate(foods[rand1], playerCam.transform.position, playerCam.transform.rotation);
+            food = Instantiate(foods[rand1], foodSpawnPos.transform.position, playerCam.transform.rotation);
 
             nextFood = foods[rand2];
 
