@@ -12,7 +12,14 @@ public class CameraTurn : MonoBehaviour
     int currentObj = 0; //Starting object to look at is 0
     private float rotSpeed = 350.0f;    //Rotation Speed of camera attached to game object
     Quaternion Rot;
+    public bool canThrow;
 
+
+
+
+    void Start(){
+        canThrow = true;
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -21,7 +28,7 @@ public class CameraTurn : MonoBehaviour
         //turn left
         if ((Input.GetKeyDown(KeyCode.A)) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
-
+            canThrow = false;
             if (currentObj != objs.Length - 1)
             {
                 currentObj++;
@@ -32,12 +39,12 @@ public class CameraTurn : MonoBehaviour
                 currentObj = 0;
                 //Debug.Log(currentObj);
             }
-
         }
 
         //turn right
         else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)))
-        {
+        {   
+            canThrow = false;
             //Sets current obj to look at
             if (currentObj != 0)
             {
@@ -67,6 +74,13 @@ public class CameraTurn : MonoBehaviour
 
         //rotates the food along with the player
         charClass.food.transform.rotation = Quaternion.RotateTowards(charClass.food.transform.rotation, Rot, Time.deltaTime * rotSpeed);
+        
+        //stops player from throwing between turns
+        float angle = 10;
+        if(Vector3.Angle(this.transform.forward, objs[currentObj].transform.position - this.transform.position) < angle) {
+            canThrow = true;
+        }
+
     }
 
     //getter for currentObj index
