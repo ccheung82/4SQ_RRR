@@ -9,10 +9,46 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] public float transitionTime = 1f;
 
     // Update is called once per frame
-    public void loadNextLevel()
+    public void loadStart()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(0));
     }
+
+    public void loadInstructions()
+    {
+        StartCoroutine(LoadLevel(1));
+    }
+
+    public void loadLevelSelect()
+    {
+        StartCoroutine(LoadLevel(2));
+    }
+
+    public void loadEasy()
+    {
+        StartCoroutine(LoadLevel(3));
+    }
+
+    public void loadMedium()
+    {
+        StartCoroutine(LoadLevel(4));
+    }
+
+    public void loadHard()
+    {
+        StartCoroutine(LoadLevel(5));
+    }
+
+    public void loadGameOver()
+    {
+        StartCoroutine(LoadLevel(6));
+    }
+
+    public void loadSettings()
+    {
+        Debug.Log("IMPLEMENT SETTINGS SCREEN");
+    }
+
 
     IEnumerator LoadLevel(int levelIndex)
     {

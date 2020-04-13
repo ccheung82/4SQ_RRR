@@ -7,13 +7,8 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public GameObject playButton;
-    public GameObject quitButton;
     public GameObject settingsButton;
-    public GameObject controlsPanel;
-    public GameObject settingsPanel;
-    public GameObject continueButton;
-    public GameObject backButton;
-    [SerializeField] GameObject levLoader;
+    [SerializeField] LevelLoader levLoader;
 
     void Start()
     {
@@ -21,26 +16,13 @@ public class MenuController : MonoBehaviour
         settingsButton.SetActive(true);
     }
 
-    public void PlayGame()
+    public void PlayButtonClicked()
     {
-        controlsPanel.SetActive(true);
-        continueButton.SetActive(true);
-        playButton.SetActive(false);
-        settingsButton.SetActive(false);
+        levLoader.loadInstructions();
     }
 
-    public void ContinueButtonClicked()
+    public void SettingsButtonClicked()
     {
-        GameObject.FindWithTag("loader").GetComponent<LevelLoader>().loadNextLevel();
+        levLoader.loadSettings();
     }
-
-    public void CreditsButtonClicked()
-    {
-        settingsPanel.SetActive(false);
-        continueButton.SetActive(true);
-    }
-    
-
-
-
 }
