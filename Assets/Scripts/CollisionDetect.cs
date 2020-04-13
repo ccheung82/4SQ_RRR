@@ -13,6 +13,8 @@ public class CollisionDetect : MonoBehaviour
             col.gameObject.transform.GetChild(0).GetChild(3).GetComponent<timerScript>().resetTimer();
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().calculateScore(col.gameObject.transform);
             col.gameObject.GetComponent<CustomerScript>().fedTimes++;
+            col.gameObject.GetComponent<CustomerScript>().incFed();
+            
 
             //generate next customer
             if(col.gameObject.GetComponent<CustomerScript>().fedTimes >=3){

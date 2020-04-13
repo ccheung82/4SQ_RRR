@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CustomerScript : MonoBehaviour{
 
@@ -15,5 +16,9 @@ public class CustomerScript : MonoBehaviour{
 
     void Update(){
         
+    }
+
+    public void incFed(){
+        this.transform.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text += "$";
     }
 }
