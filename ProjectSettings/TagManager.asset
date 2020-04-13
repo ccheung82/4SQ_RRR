@@ -15,6 +15,7 @@ TagManager:
   - scoreSystem
   - brown
   - orange
+  - loader
   layers:
   - Default
   - TransparentFX
