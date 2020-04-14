@@ -15,7 +15,6 @@ public class CharacterBehave : MonoBehaviour
     public GameObject[] positions;
     public bool holdingFood;
     public int difficulty;
-    public int nextCustomer;
     private int randomInt1;
     private int randomInt;
     private float timeTaken = 1000;
@@ -25,21 +24,22 @@ public class CharacterBehave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        holdingFood = false;        //no food till food is generated
 
         //Debug.Log("TEST");
         switch (difficulty)
         {         //difficulty translation logic 1-3 (easy-hard), translates to # of customers (2,4,6)
             case 1:
-                difficulty = 3;
+                difficulty = 4;
                 break;
             case 2:
                 difficulty = 5;
                 break;
             case 3:
-                difficulty = 7;
+                difficulty = 6;
                 break;
             default:
-                difficulty = 3;
+                difficulty = 4;
                 break;
         }
 
@@ -47,7 +47,7 @@ public class CharacterBehave : MonoBehaviour
         {
             inUse.Add(foods[i].tag, false);
         }
-
+        Debug.Log("made it here");
         for (int i = 0; i < positions.Length; i++) //instantiates # of characters needed and updates value in map
         {
             //TODO: randomize colors
@@ -55,9 +55,6 @@ public class CharacterBehave : MonoBehaviour
             inUse[customers[i].tag] = true;
         }
 
-
-        nextCustomer = difficulty - 1;
-        holdingFood = false;        //no food till food is generated
         FirstFood();                //generates first food @ start of game
     }
 
@@ -67,7 +64,7 @@ public class CharacterBehave : MonoBehaviour
 
         if (GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
         }
 
         
@@ -154,6 +151,8 @@ public class CharacterBehave : MonoBehaviour
         {
             FirstFood();
         }
+
+        Debug.Log("FIRST FOOD");
     }
 
 
@@ -163,6 +162,7 @@ public class CharacterBehave : MonoBehaviour
         for (int i = 0; i < difficulty; i++)
         {
             if (inUse[customers[i].tag] == false)
+                Debug.Log(inUse[customers[i].tag] + " " + customers[i]);
                 return i;
         }
         return -1;
@@ -174,7 +174,6 @@ public class CharacterBehave : MonoBehaviour
         Vector3 pos = curr.transform.position;
         Quaternion rot = curr.transform.rotation;
         int index = nextCustomerCalculation();
-
         inUse[curr.tag] = false;
         inUse[customers[index].tag] = true;
 
