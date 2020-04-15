@@ -21,7 +21,7 @@ public class InstructionsController : MonoBehaviour
         levLoader.loadLevelSelect();
     }
 
-    public void backButtonClicked()
+    public void HomeButtonClicked()
     {
         levLoader.loadStart();
     }

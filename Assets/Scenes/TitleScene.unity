@@ -248,6 +248,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264180315}
   m_CullTransparentMesh: 0
+--- !u!95 &424228662 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8555088446866203130, guid: 50972ef2644e54a0b9f27864960fcd58,
+    type: 3}
+  m_PrefabInstance: {fileID: 4256259456189767525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &441115626
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,12 +819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610360504}
   m_CullTransparentMesh: 0
---- !u!95 &1709388049 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6164701281671611216, guid: 50972ef2644e54a0b9f27864960fcd58,
-    type: 3}
-  m_PrefabInstance: {fileID: 4256259456189767525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2143137918
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +917,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 666213799879670587, guid: 50972ef2644e54a0b9f27864960fcd58,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231424955217365187, guid: 50972ef2644e54a0b9f27864960fcd58,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4256259457221964980, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -986,11 +996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: transition
       value: 
-      objectReference: {fileID: 1709388049}
+      objectReference: {fileID: 424228662}
     - target: {fileID: 4256259457221964983, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
       propertyPath: transitionTime
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6164701281671611216, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
