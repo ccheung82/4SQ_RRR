@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CharacterBehave : MonoBehaviour
 {
 
@@ -157,7 +156,6 @@ public class CharacterBehave : MonoBehaviour
         //Debug.Log("FIRST FOOD");
     }
 
-
     //returns current index customer to be generated and calculates the next one
     public int nextCustomerCalculation()
     {
@@ -166,7 +164,7 @@ public class CharacterBehave : MonoBehaviour
         {
 
             if (inUse[customers[i].tag] == false)
-            { 
+            {
                 //Debug.Log("should be false: color: " + inUse[customers[i].tag] + " bool: " + customers[i]);
                 return i;
             }
@@ -191,5 +189,11 @@ public class CharacterBehave : MonoBehaviour
         {
             Debug.Log(foods[i].tag + " " + inUse[foods[i].tag]);
         }
+    }
+
+    //retunrs difficulty for use in setting timers
+    public int getDifficulty()
+    {
+        return difficulty;
     }
 }
