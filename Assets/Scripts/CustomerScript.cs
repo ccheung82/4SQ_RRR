@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CustomerScript : MonoBehaviour{
 
@@ -15,5 +16,15 @@ public class CustomerScript : MonoBehaviour{
 
     void Update(){
         
+    }
+
+    public void incFed(){
+        this.fedTimes++;
+        this.transform.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text += "$";
+    }
+
+    public void incSize(){
+
+        this.transform.GetChild(3).localScale += new Vector3(0.04f,0.04f,0.04f);
     }
 }

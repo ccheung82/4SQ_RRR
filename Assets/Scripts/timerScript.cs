@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class timerScript : MonoBehaviour
 {
     [SerializeField] Text uiText;
     [SerializeField] float mainTimer;
     [SerializeField] Image timerIcon;
+    public TextMeshProUGUI timesFed;
 
     decimal timer; //timer 
     bool canCount = true; //should the timer decrease

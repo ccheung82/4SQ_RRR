@@ -16,6 +16,8 @@ TagManager:
   - brown
   - orange
   - loader
+  - yellow
+  - pink
   layers:
   - Default
   - TransparentFX

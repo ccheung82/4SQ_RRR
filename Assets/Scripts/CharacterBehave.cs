@@ -8,37 +8,38 @@ public class CharacterBehave : MonoBehaviour
 
     public GameObject food;
     public GameObject playerCam;
+    public GameObject foodSpawnPos;
     public GameObject nextFood;
     public GameObject[] foods;
     public GameObject[] customers;
     public GameObject[] positions;
     public bool holdingFood;
     public int difficulty;
-    public int nextCustomer;
     private int randomInt1;
     private int randomInt;
-    private float timeTaken = 10;
+    private float timeTaken = 1000;
     private Dictionary<string, bool> inUse = new Dictionary<string, bool>();
 
 
     // Start is called before the first frame update
     void Start()
     {
+        holdingFood = false;        //no food till food is generated
 
         //Debug.Log("TEST");
         switch (difficulty)
         {         //difficulty translation logic 1-3 (easy-hard), translates to # of customers (2,4,6)
             case 1:
-                difficulty = 3;
+                difficulty = 4;
                 break;
             case 2:
                 difficulty = 5;
                 break;
             case 3:
-                difficulty = 7;
+                difficulty = 6;
                 break;
             default:
-                difficulty = 3;
+                difficulty = 4;
                 break;
         }
 
@@ -46,7 +47,7 @@ public class CharacterBehave : MonoBehaviour
         {
             inUse.Add(foods[i].tag, false);
         }
-
+        //Debug.Log("made it here");
         for (int i = 0; i < positions.Length; i++) //instantiates # of characters needed and updates value in map
         {
             //TODO: randomize colors
@@ -54,9 +55,6 @@ public class CharacterBehave : MonoBehaviour
             inUse[customers[i].tag] = true;
         }
 
-
-        nextCustomer = difficulty - 1;
-        holdingFood = false;        //no food till food is generated
         FirstFood();                //generates first food @ start of game
     }
 
@@ -66,10 +64,10 @@ public class CharacterBehave : MonoBehaviour
 
         if (GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
         }
 
-        
+
         if (Input.GetKeyUp(KeyCode.UpArrow) && GameObject.Find("Main Camera").GetComponent<CameraTurn>().canThrow)
         {
             CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
@@ -85,6 +83,7 @@ public class CharacterBehave : MonoBehaviour
             if (currTime > timeTaken)
             {
                 currTime = timeTaken;
+                //Debug.Log("currTime");
             }
 
             float perc = currTime / timeTaken;
@@ -101,7 +100,8 @@ public class CharacterBehave : MonoBehaviour
             GenRandom();
         }
 
-        if (inUse[this.food.tag] == false) {
+        if (inUse[this.food.tag] == false)
+        {
             Destroy(this.food);
             GenRandom();
         }
@@ -110,7 +110,7 @@ public class CharacterBehave : MonoBehaviour
 
     //food is nextFood and nextFood is newly generated
     void GenRandom()
-    {     
+    {
         randomInt = Random.Range(0, difficulty); //generate random seeds for food selection
 
         bool foodVal = inUse[foods[randomInt].tag];
@@ -119,10 +119,10 @@ public class CharacterBehave : MonoBehaviour
 
             nextFood = foods[randomInt];   //next food generated
 
-            food = Instantiate(nextFood, playerCam.transform.position, playerCam.transform.rotation);   //create new food
+            food = Instantiate(nextFood, foodSpawnPos.transform.position, playerCam.transform.rotation);   //create new food
             holdingFood = true; //player status update
 
-            
+
         }
         else
         {
@@ -130,7 +130,8 @@ public class CharacterBehave : MonoBehaviour
         }
     }
 
-    void updateActiveCustomers() {
+    void updateActiveCustomers()
+    {
 
     }
 
@@ -142,7 +143,7 @@ public class CharacterBehave : MonoBehaviour
 
         if (inUse[foods[rand1].tag] == true && inUse[foods[rand2].tag] == true) //checks to see if the corresponding customer is in the scene
         {
-            food = Instantiate(foods[rand1], playerCam.transform.position, playerCam.transform.rotation);
+            food = Instantiate(foods[rand1], foodSpawnPos.transform.position, playerCam.transform.rotation);
 
             nextFood = foods[rand2];
 
@@ -152,16 +153,23 @@ public class CharacterBehave : MonoBehaviour
         {
             FirstFood();
         }
+
+        //Debug.Log("FIRST FOOD");
     }
 
 
     //returns current index customer to be generated and calculates the next one
     public int nextCustomerCalculation()
     {
-        for (int i = 0; i < difficulty; i++)
+
+        for (int i = 0; i < customers.Length; i++)
         {
+
             if (inUse[customers[i].tag] == false)
+            { 
+                //Debug.Log("should be false: color: " + inUse[customers[i].tag] + " bool: " + customers[i]);
                 return i;
+            }
         }
         return -1;
     }
@@ -172,7 +180,6 @@ public class CharacterBehave : MonoBehaviour
         Vector3 pos = curr.transform.position;
         Quaternion rot = curr.transform.rotation;
         int index = nextCustomerCalculation();
-
         inUse[curr.tag] = false;
         inUse[customers[index].tag] = true;
 
@@ -180,7 +187,7 @@ public class CharacterBehave : MonoBehaviour
         Instantiate(customers[index], pos, rot);
         // Debug.Log("this is happening");
 
-        for (int i = 0; i < difficulty; i++)
+        for (int i = 0; i < customers.Length; i++)
         {
             Debug.Log(foods[i].tag + " " + inUse[foods[i].tag]);
         }

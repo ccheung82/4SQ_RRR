@@ -40,7 +40,7 @@ public class Score : MonoBehaviour
     }
 
     public bool isGameOver(){
-        Debug.Log(strikeCount);
+        //Debug.Log(strikeCount);
         if(strikeCount <= 0){
             return true;
         }
