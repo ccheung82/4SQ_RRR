@@ -123,6 +123,10 @@ MonoBehaviour:
   uiText: {fileID: 7324978963721128055}
   mainTimer: 15
   timerIcon: {fileID: 7324978962879637759}
+  timesFed: {fileID: 0}
+  timesUp: 0
+  resetBool: 0
+  cxTimeOut: {fileID: 0}
 --- !u!1 &7324978962879637757
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +460,7 @@ Canvas:
   m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

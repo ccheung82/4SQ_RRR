@@ -6,42 +6,48 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] public Animator transition;
-    [SerializeField] public float transitionTime = 1f;
+    private int levelToLoad;
 
-    // Update is called once per frame
     public void loadStart()
     {
-        StartCoroutine(LoadLevel(0));
+        levelToLoad = 0;
+        transition.SetTrigger("Start");
     }
 
     public void loadInstructions()
     {
-        StartCoroutine(LoadLevel(1));
+        levelToLoad = 1;
+        transition.SetTrigger("Start");
     }
 
     public void loadLevelSelect()
     {
-        StartCoroutine(LoadLevel(2));
+        levelToLoad =2;
+        transition.SetTrigger("Start");
     }
 
     public void loadEasy()
     {
-        StartCoroutine(LoadLevel(3));
+        levelToLoad = 3;
+        transition.SetTrigger("Start");
     }
 
     public void loadMedium()
     {
-        StartCoroutine(LoadLevel(4));
+        levelToLoad = 4;
+        transition.SetTrigger("Start");
     }
 
     public void loadHard()
     {
-        StartCoroutine(LoadLevel(5));
+        levelToLoad = 5;
+        transition.SetTrigger("Start");
     }
 
     public void loadGameOver()
     {
-        StartCoroutine(LoadLevel(6));
+        levelToLoad = 6;
+        transition.SetTrigger("Start");
     }
 
     public void loadSettings()
@@ -49,14 +55,19 @@ public class LevelLoader : MonoBehaviour
         Debug.Log("IMPLEMENT SETTINGS SCREEN");
     }
 
-
-    IEnumerator LoadLevel(int levelIndex)
+    public void onTransitionComplete()
     {
-        //play animation
-        transition.SetTrigger("Start");
-        //wait
-        yield return new WaitForSeconds(transitionTime);
         //load scene
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(levelToLoad);
     }
+
+
+
+    //IEnumerator LoadLevel(int levelIndex)
+    //{
+    //    //play animation
+    //    transition.SetTrigger("Start");
+    //    //wait
+    //    yield return new WaitForSeconds(transitionTime);
+    //}
 }

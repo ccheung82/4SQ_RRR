@@ -3,7 +3,11 @@ guid: dca4cb9a8c5b5476081faa56e4b1ba57
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - continueButton: {instanceID: 0}
+  - backButton: {instanceID: 0}
+  - levLoader: {fileID: 4256259457221964983, guid: 50972ef2644e54a0b9f27864960fcd58,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
