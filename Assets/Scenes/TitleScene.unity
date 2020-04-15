@@ -248,12 +248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264180315}
   m_CullTransparentMesh: 0
---- !u!95 &424228662 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8555088446866203130, guid: 50972ef2644e54a0b9f27864960fcd58,
-    type: 3}
-  m_PrefabInstance: {fileID: 4256259456189767525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &441115626
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +813,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610360504}
   m_CullTransparentMesh: 0
+--- !u!95 &1831409856 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5878872174634184266, guid: 50972ef2644e54a0b9f27864960fcd58,
+    type: 3}
+  m_PrefabInstance: {fileID: 4256259456189767525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2143137918
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: transition
       value: 
-      objectReference: {fileID: 424228662}
+      objectReference: {fileID: 1831409856}
     - target: {fileID: 4256259457221964983, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
       propertyPath: transitionTime
@@ -1013,5 +1013,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -500
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3825639906368146115, guid: 50972ef2644e54a0b9f27864960fcd58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50972ef2644e54a0b9f27864960fcd58, type: 3}
