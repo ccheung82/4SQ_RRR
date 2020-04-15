@@ -1862,7 +1862,7 @@ MeshCollider:
   m_GameObject: {fileID: 4797762521445247086}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1921,7 +1921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766736988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.374, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1857568696}
@@ -1980,7 +1980,6 @@ MonoBehaviour:
   - {fileID: 475204758}
   holdingFood: 1
   difficulty: 2
-  nextCustomer: 0
 --- !u!143 &1857568695
 CharacterController:
   m_ObjectHideFlags: 0
