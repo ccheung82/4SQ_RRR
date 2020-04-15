@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 2247907059118406356}
   m_Layer: 0
   m_Name: Puppy
-  m_TagString: Untagged
+  m_TagString: brown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
