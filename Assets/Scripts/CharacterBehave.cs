@@ -162,12 +162,12 @@ public class CharacterBehave : MonoBehaviour
     public int nextCustomerCalculation()
     {
 
-        for (int i = 0; i < customers.Length; i++) //does this only loop once?
+        for (int i = 0; i < customers.Length; i++)
         {
 
             if (inUse[customers[i].tag] == false)
-            { //NOT GOING IN HERE
-                Debug.Log("should be false: color: " + inUse[customers[i].tag] + " bool: " + customers[i]);
+            { 
+                //Debug.Log("should be false: color: " + inUse[customers[i].tag] + " bool: " + customers[i]);
                 return i;
             }
         }
