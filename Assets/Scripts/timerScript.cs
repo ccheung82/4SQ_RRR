@@ -30,16 +30,19 @@ public class timerScript : MonoBehaviour
 
         if (difficulty == 4) //easy
         {
+            mainTimer = easyTime;
             timer = (decimal)easyTime;
         }
         else
         if (difficulty == 5) //medium
         {
+            mainTimer = medTime;
             timer = (decimal)medTime;
         }
         else
         if (difficulty == 6) //hard
         {
+            mainTimer = hardTime;
             timer = (decimal)hardTime;
         }
     }
@@ -78,18 +81,21 @@ public class timerScript : MonoBehaviour
 
     public void resetTimer()
     {
-        if (difficulty == 4) //easy
+        if(difficulty == 4) //easy
         {
+            mainTimer = easyTime;
             timer = (decimal)easyTime;
         }
         else
         if (difficulty == 5) //medium
         {
+            mainTimer = medTime;
             timer = (decimal)medTime;
         }
         else
         if (difficulty == 6) //hard
         {
+            mainTimer = hardTime;
             timer = (decimal)hardTime;
         }
         canCount = true;
