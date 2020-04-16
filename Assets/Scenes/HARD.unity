@@ -162,7 +162,7 @@ Transform:
   - {fileID: 2138242136}
   - {fileID: 483726306}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &87400822 stripped
 GameObject:
@@ -405,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 4256259457221964980, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4256259457221964980, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
@@ -1844,7 +1844,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0536fbd4fd6d8e7499d5e1b0dd960c6e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0536fbd4fd6d8e7499d5e1b0dd960c6e,
         type: 3}
@@ -2984,19 +2984,19 @@ MonoBehaviour:
   foodSpawnPos: {fileID: 1766736988}
   nextFood: {fileID: 0}
   foods:
-  - {fileID: 8322398856526705881, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}
-  - {fileID: 255373442308834182, guid: 7bf593dc5564547e09d24225db956754, type: 3}
-  - {fileID: 2512334656476915156, guid: f17f546ae751b4b30b06e13e5ac2a4be, type: 3}
   - {fileID: 9210569937451325141, guid: 97fd4f89fafef47a1af0df1a38559db9, type: 3}
   - {fileID: 7905901979390313554, guid: 2ceff95d7f1e5461db1d792bb53dcc67, type: 3}
+  - {fileID: 2512334656476915156, guid: f17f546ae751b4b30b06e13e5ac2a4be, type: 3}
+  - {fileID: 255373442308834182, guid: 7bf593dc5564547e09d24225db956754, type: 3}
+  - {fileID: 255373442308834182, guid: 16ece67060cda49159430fcb5a7e284d, type: 3}
   - {fileID: 255373442308834182, guid: e17f71b17870e4567831ca1e0c69b782, type: 3}
   customers:
-  - {fileID: 3957477453281932380, guid: 8bfac73321c2e45e0a296fcac0bef780, type: 3}
   - {fileID: 4616937209090641699, guid: 03789936e1c5d4176ab586e19ed6c974, type: 3}
   - {fileID: 6471899429744690658, guid: d8229fa53767d4531b05333468e61cc3, type: 3}
   - {fileID: 4576410411338408430, guid: 61e01d0333e60436ebfe50d4c2425c1d, type: 3}
   - {fileID: 5269523886800029515, guid: f82765116e6734b5a96b18cf8d0230bf, type: 3}
   - {fileID: 5269523886800029515, guid: b892841413d0644cfb5aee0ecdc4f49d, type: 3}
+  - {fileID: 5269523886800029515, guid: 9fa4231f3fc4948dba0aa00ea28f7002, type: 3}
   positions:
   - {fileID: 526983330}
   - {fileID: 1187247910}
