@@ -596,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227, y: 404}
+  m_AnchoredPosition: {x: 285, y: 404}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8915979297012025318
@@ -2199,6 +2199,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87762553764825810}
     m_Modifications:
+    - target: {fileID: 735316670704779792, guid: 60c2be87cea8140208b9ef973743429b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 500f89ead246e4e86a07eaaf3eeaaf9f,
+        type: 3}
+    - target: {fileID: 735316670704779794, guid: 60c2be87cea8140208b9ef973743429b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -240.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 735316670704779794, guid: 60c2be87cea8140208b9ef973743429b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 233.99998
+      objectReference: {fileID: 0}
     - target: {fileID: 735316670769155881, guid: 60c2be87cea8140208b9ef973743429b,
         type: 3}
       propertyPath: timesFed
@@ -2313,6 +2329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'Timer UI Canvas '
+      objectReference: {fileID: 0}
+    - target: {fileID: 735316671491551810, guid: 60c2be87cea8140208b9ef973743429b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -235
+      objectReference: {fileID: 0}
+    - target: {fileID: 735316671491551810, guid: 60c2be87cea8140208b9ef973743429b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 371
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c2be87cea8140208b9ef973743429b, type: 3}
