@@ -54,6 +54,8 @@ public class CharacterBehave : MonoBehaviour
             inUse[customers[i].tag] = true;
         }
 
+        inUse[customers[positions.Length].tag] = false;
+
         FirstFood();                //generates first food @ start of game
     }
 
@@ -167,6 +169,7 @@ public class CharacterBehave : MonoBehaviour
             {
                 //Debug.Log("should be false: color: " + inUse[customers[i].tag] + " bool: " + customers[i]);
                 return i;
+
             }
         }
         return -1;
@@ -179,6 +182,7 @@ public class CharacterBehave : MonoBehaviour
         Quaternion rot = curr.transform.rotation;
         int index = nextCustomerCalculation();
         inUse[curr.tag] = false;
+        Debug.Log(index);
         inUse[customers[index].tag] = true;
 
         Destroy(curr.gameObject);
