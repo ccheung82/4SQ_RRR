@@ -54,8 +54,6 @@ public class CharacterBehave : MonoBehaviour
             inUse[customers[i].tag] = true;
         }
 
-        inUse[customers[positions.Length].tag] = false;
-
         FirstFood();                //generates first food @ start of game
     }
 
