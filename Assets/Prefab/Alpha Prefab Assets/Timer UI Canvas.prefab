@@ -124,9 +124,13 @@ MonoBehaviour:
   mainTimer: 15
   timerIcon: {fileID: 7324978962879637759}
   timesFed: {fileID: 0}
+  difficulty: 0
   timesUp: 0
   resetBool: 0
   cxTimeOut: {fileID: 0}
+  easyTime: 10
+  medTime: 15
+  hardTime: 20
 --- !u!1 &7324978962879637757
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400}
+  m_AnchoredPosition: {x: 0, y: 403}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7324978962879637758
@@ -234,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.999962, y: 263}
+  m_AnchoredPosition: {x: 0.00000047684, y: 263}
   m_SizeDelta: {x: 188.4, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7324978963721128054
