@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour
 
     public void loadLevelSelect()
     {
-        levelToLoad =2;
+        levelToLoad = 2;
         transition.SetTrigger("Start");
     }
 

@@ -12,10 +12,10 @@ public class timerScript : MonoBehaviour
     [SerializeField] Image timerIcon;
     public TextMeshProUGUI timesFed;
 
-    public int difficulty; 
+    public int difficulty;
     decimal timer; //timer 
     bool canCount = true; //should the timer decrease
-    public bool timesUp = false; 
+    public bool timesUp = false;
     public bool resetBool = false;
     public GameObject cxTimeOut;
     //time for easy/med/hard
@@ -31,11 +31,13 @@ public class timerScript : MonoBehaviour
         if (difficulty == 4) //easy
         {
             timer = (decimal)easyTime;
-        } else 
+        }
+        else
         if (difficulty == 5) //medium
         {
             timer = (decimal)medTime;
-        } else 
+        }
+        else
         if (difficulty == 6) //hard
         {
             timer = (decimal)hardTime;
@@ -67,13 +69,15 @@ public class timerScript : MonoBehaviour
             GameObject.FindWithTag("Player").GetComponent<CharacterBehave>().replaceCustomer(cxTimeOut);
         }
 
-        if(resetBool) {
+        if (resetBool)
+        {
             resetTimer();
             resetBool = false;
         }
     }
 
-    public void resetTimer() {
+    public void resetTimer()
+    {
         if (difficulty == 4) //easy
         {
             timer = (decimal)easyTime;
@@ -91,5 +95,4 @@ public class timerScript : MonoBehaviour
         canCount = true;
         timesUp = false;
     }
-
 }
