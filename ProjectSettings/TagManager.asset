@@ -18,6 +18,7 @@ TagManager:
   - loader
   - yellow
   - pink
+  - animations
   layers:
   - Default
   - TransparentFX

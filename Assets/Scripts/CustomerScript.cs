@@ -27,4 +27,5 @@ public class CustomerScript : MonoBehaviour{
 
         this.transform.GetChild(3).localScale += new Vector3(0.04f,0.04f,0.04f);
     }
+
 }
