@@ -28,6 +28,8 @@ public class CollisionDetect : MonoBehaviour
 
         }else{
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
+            col.gameObject.GetComponentInChildren<Animator>().ResetTrigger("isIncorrect");
+            col.gameObject.GetComponentInChildren<Animator>().SetTrigger("isIncorrect");
         }
        
        Destroy(this.gameObject);    //delete food on collision

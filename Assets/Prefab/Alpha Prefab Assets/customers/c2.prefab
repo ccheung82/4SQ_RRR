@@ -1010,7 +1010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fedTimes: 0
-  customer_Anim: {fileID: 0}
 --- !u!65 &2150989310399839570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1036,7 +1035,7 @@ GameObject:
   - component: {fileID: 1505835607305044407}
   - component: {fileID: 3456757412506114706}
   m_Layer: 0
-  m_Name: polySurface7
+  m_Name: polySurface33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1114,7 +1113,7 @@ GameObject:
   - component: {fileID: 827386341424242582}
   - component: {fileID: 141695934201487781}
   m_Layer: 0
-  m_Name: polySurface6
+  m_Name: polySurface32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,7 +1611,7 @@ GameObject:
   - component: {fileID: 8758893234444079578}
   - component: {fileID: 4417458229653151323}
   m_Layer: 0
-  m_Name: polySurface8
+  m_Name: polySurface39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1924,7 +1923,7 @@ GameObject:
   - component: {fileID: 5370652225075144690}
   - component: {fileID: 6211975190626120883}
   m_Layer: 0
-  m_Name: polySurface9
+  m_Name: polySurface40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

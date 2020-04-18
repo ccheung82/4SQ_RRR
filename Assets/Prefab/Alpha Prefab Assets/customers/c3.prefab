@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5469549081445963686}
   - component: {fileID: 8362590066548023355}
   m_Layer: 0
-  m_Name: polySurface22
+  m_Name: polySurface40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 3526472075774854463}
   - component: {fileID: 654353739064875410}
   m_Layer: 0
-  m_Name: polySurface21
+  m_Name: polySurface39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 3993379820354446698}
   - component: {fileID: 5607858176813093106}
   m_Layer: 0
-  m_Name: polySurface23
+  m_Name: polySurface32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 2942845217123417471}
   - component: {fileID: 2304687155483887512}
   m_Layer: 0
-  m_Name: polySurface24
+  m_Name: polySurface33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1686,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fedTimes: 0
-  customer_Anim: {fileID: 0}
 --- !u!65 &953355391142303130
 BoxCollider:
   m_ObjectHideFlags: 0
