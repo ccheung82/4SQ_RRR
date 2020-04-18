@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 2
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -894,6 +894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: loader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256259457221964981, guid: 50972ef2644e54a0b9f27864960fcd58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256259457221964983, guid: 50972ef2644e54a0b9f27864960fcd58,
         type: 3}
