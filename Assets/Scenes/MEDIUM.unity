@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657993, g: 0.49641424, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657922, g: 0.49641365, b: 0.57481736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2904,7 +2904,7 @@ MonoBehaviour:
   foodSpawnPos: {fileID: 1766736988}
   nextFood: {fileID: 0}
   foods:
-  - {fileID: 8322398856526705881, guid: 3b9073f1126c140a8a14cfe8ddc71f6f, type: 3}
+  - {fileID: 8322398856526705881, guid: e6e9876d63e9a4a2891578b98209c7ec, type: 3}
   - {fileID: 9210569937451325141, guid: 97fd4f89fafef47a1af0df1a38559db9, type: 3}
   - {fileID: 7905901979390313554, guid: 2ceff95d7f1e5461db1d792bb53dcc67, type: 3}
   - {fileID: 2512334656476915156, guid: f17f546ae751b4b30b06e13e5ac2a4be, type: 3}
