@@ -16,6 +16,7 @@ public class CollisionDetect : MonoBehaviour
 
             if (col.gameObject.GetComponent<CustomerScript>().fedTimes <3){
             col.gameObject.GetComponent<CustomerScript>().incSize();
+            //correct food eating animation trigger
             col.gameObject.GetComponentInChildren<Animator>().ResetTrigger("isEating");
             col.gameObject.GetComponentInChildren<Animator>().SetTrigger("isEating");
             }
@@ -28,6 +29,7 @@ public class CollisionDetect : MonoBehaviour
 
         }else{
             GameObject.FindWithTag("scoreSystem").GetComponent<Score>().addStrike();
+            //incorrect food animation trigger
             col.gameObject.GetComponentInChildren<Animator>().ResetTrigger("isIncorrect");
             col.gameObject.GetComponentInChildren<Animator>().SetTrigger("isIncorrect");
         }
