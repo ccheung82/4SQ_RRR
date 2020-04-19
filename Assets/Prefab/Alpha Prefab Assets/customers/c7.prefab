@@ -1161,6 +1161,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puppyy
       objectReference: {fileID: 0}
+    - target: {fileID: 6521189383500098860, guid: ca642712a6c6dd94086d11e484b72b66,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3927
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521189383500098860, guid: ca642712a6c6dd94086d11e484b72b66,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0298
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311371484680623135, guid: ca642712a6c6dd94086d11e484b72b66,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7193a6f93865ed4c934159ab85bca61, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca642712a6c6dd94086d11e484b72b66, type: 3}
 --- !u!4 &8514947717039751746 stripped
