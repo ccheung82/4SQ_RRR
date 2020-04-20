@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
 {
     public GameObject playButton;
     public GameObject settingsButton;
+    public GameObject creditsButton;
     [SerializeField] LevelLoader levLoader;
 
     void Start()
@@ -24,5 +25,10 @@ public class MenuController : MonoBehaviour
     public void SettingsButtonClicked()
     {
         levLoader.loadSettings();
+    }
+
+    public void CreditsButtonClicked()
+    {
+        levLoader.loadCredits();
     }
 }

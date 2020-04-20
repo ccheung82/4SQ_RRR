@@ -55,6 +55,11 @@ public class LevelLoader : MonoBehaviour
         Debug.Log("IMPLEMENT SETTINGS SCREEN");
     }
 
+    public void loadCredits()
+    {
+        Debug.Log("IMPLEMENT CREDITS SCREEN");
+    }
+
     public void onTransitionComplete()
     {
         //load scene
