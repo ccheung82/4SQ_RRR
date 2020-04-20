@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterBehave : MonoBehaviour
 {
-
+    AudioSource audio;
     public GameObject food;
     public GameObject playerCam;
     public GameObject foodSpawnPos;
@@ -24,6 +24,8 @@ public class CharacterBehave : MonoBehaviour
     void Start()
     {
         holdingFood = false;        //no food till food is generated
+
+        audio = GetComponent<AudioSource>();
 
         //Debug.Log("TEST");
         switch (difficulty)
@@ -70,6 +72,9 @@ public class CharacterBehave : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow) && GameObject.Find("Main Camera").GetComponent<CameraTurn>().canThrow)
         {
             CameraTurn camClass = GameObject.Find("Main Camera").GetComponent<CameraTurn>() as CameraTurn;   //instantiate for cross script use
+
+            //Food Thrown Sound
+            audio.Play();
 
             Vector3 movement = food.transform.rotation * Vector3.forward;
             Vector3 startpos = food.transform.GetChild(0).position; //initial food position

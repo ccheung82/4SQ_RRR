@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
+    AudioSource audio;
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         PauseMenuUI.SetActive(false);
     }
 
@@ -21,10 +23,13 @@ public class PauseMenuController : MonoBehaviour
             if (GameIsPaused)
             {
                 ResumeGame();
+                audio.Play();
+                
             }
             else
             {
                 PauseGame();
+                audio.Play();
             }
         }
     }
