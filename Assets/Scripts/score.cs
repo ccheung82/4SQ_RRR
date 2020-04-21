@@ -34,7 +34,7 @@ public class Score : MonoBehaviour
         float timeLeft = float.Parse(customer.GetChild(0).transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text);  //time left in timer
         float currentScore = float.Parse(currScoreText.text);   //current score
         currentScore = currentScore + (maxPoints * timeLeft);
-        audio.PlayOneShot(clip2, .5f);
+        audio.PlayOneShot(clip2, .15f);
         int intScore = (int) currentScore;
         currScoreText.text = intScore.ToString();
     }
