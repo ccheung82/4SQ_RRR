@@ -59,7 +59,7 @@ public class LevelLoader : MonoBehaviour
 
     public void loadCredits()
     {
-        levelToLoad = 8;
+        levelToLoad = 7;
         transition.SetTrigger("Start");
         Debug.Log("IMPLEMENT CREDITS SCREEN");
     }
