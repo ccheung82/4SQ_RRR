@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     AudioSource audio;
+    [SerializeField] LevelLoader levLoader;
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     // Start is called before the first frame update
@@ -50,12 +51,22 @@ public class PauseMenuController : MonoBehaviour
 
     public void Back2MainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        levLoader.loadStart();
+    }
+
+    public void RestartGame()
+    {
+        levLoader.loadInstructions();
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit Pressed");
         Application.Quit();
+    }
+
+    public void CreditsClicked()
+    {
+        levLoader.loadCredits();
     }
 }
