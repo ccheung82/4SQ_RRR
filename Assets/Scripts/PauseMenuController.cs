@@ -25,7 +25,7 @@ public class PauseMenuController : MonoBehaviour
             {
                 ResumeGame();
                 audio.Play();
-                
+
             }
             else
             {
@@ -68,5 +68,10 @@ public class PauseMenuController : MonoBehaviour
     public void CreditsClicked()
     {
         levLoader.loadCredits();
+    }
+
+    public void SettingsButton()
+    {
+        levLoader.loadSettings();
     }
 }

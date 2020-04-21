@@ -52,11 +52,15 @@ public class LevelLoader : MonoBehaviour
 
     public void loadSettings()
     {
+        levelToLoad = 7;
+        transition.SetTrigger("Start");
         Debug.Log("IMPLEMENT SETTINGS SCREEN");
     }
 
     public void loadCredits()
     {
+        levelToLoad = 8;
+        transition.SetTrigger("Start");
         Debug.Log("IMPLEMENT CREDITS SCREEN");
     }
 
@@ -65,6 +69,7 @@ public class LevelLoader : MonoBehaviour
         //load scene
         SceneManager.LoadScene(levelToLoad);
     }
+
 
 
 
