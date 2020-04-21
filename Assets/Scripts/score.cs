@@ -5,6 +5,9 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+    public AudioSource audio;
+    public AudioClip clip1;
+    public AudioClip clip2;
     public GameObject life1, life2, life3;
     public GameObject scoreText;
     float maxPoints = 100;
@@ -16,6 +19,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         strikeCount = 3;
         life1.gameObject.SetActive(true);
         life2.gameObject.SetActive(true);
@@ -30,6 +34,7 @@ public class Score : MonoBehaviour
         float timeLeft = float.Parse(customer.GetChild(0).transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text);  //time left in timer
         float currentScore = float.Parse(currScoreText.text);   //current score
         currentScore = currentScore + (maxPoints * timeLeft);
+        audio.PlayOneShot(clip2, .5f);
         int intScore = (int) currentScore;
         currScoreText.text = intScore.ToString();
     }
@@ -40,6 +45,7 @@ public class Score : MonoBehaviour
         }
         currStrikeText.text = strikeVisual;
         strikeCount--;
+        audio.PlayOneShot(clip1, 1f);
         switch (strikeCount)
         {
             case 3:
