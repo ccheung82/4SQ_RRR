@@ -22,11 +22,6 @@ public class MenuController : MonoBehaviour
         levLoader.loadInstructions();
     }
 
-    public void SettingsButtonClicked()
-    {
-        levLoader.loadSettings();
-    }
-
     public void CreditsButtonClicked()
     {
         levLoader.loadCredits();

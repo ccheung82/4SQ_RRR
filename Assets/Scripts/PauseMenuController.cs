@@ -70,8 +70,4 @@ public class PauseMenuController : MonoBehaviour
         levLoader.loadCredits();
     }
 
-    public void SettingsButton()
-    {
-        levLoader.loadSettings();
-    }
 }
