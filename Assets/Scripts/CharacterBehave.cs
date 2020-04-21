@@ -65,7 +65,7 @@ public class CharacterBehave : MonoBehaviour
 
         if (GameObject.FindWithTag("scoreSystem").GetComponent<Score>().isGameOver() == true)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(7);
         }
 
 
