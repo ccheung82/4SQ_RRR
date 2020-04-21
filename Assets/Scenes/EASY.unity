@@ -3585,6 +3585,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 805656663641189796, guid: 73e31e659792b664eab9a3bcb26ed41c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 805656663641189796, guid: 73e31e659792b664eab9a3bcb26ed41c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 805656663641189798, guid: 73e31e659792b664eab9a3bcb26ed41c,
         type: 3}
       propertyPath: levLoader
