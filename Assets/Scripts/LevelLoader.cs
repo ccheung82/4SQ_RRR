@@ -8,57 +8,58 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] public Animator transition;
     private int levelToLoad;
 
-    public void loadSplash()
+    public void loadStart()
     {
         levelToLoad = 0;
         transition.SetTrigger("Start");
     }
 
-    public void loadStart()
+    public void loadInstructions()
     {
         levelToLoad = 1;
         transition.SetTrigger("Start");
     }
 
-    public void loadInstructions()
+    public void loadLevelSelect()
     {
         levelToLoad = 2;
         transition.SetTrigger("Start");
     }
 
-    public void loadLevelSelect()
+    public void loadEasy()
     {
         levelToLoad = 3;
         transition.SetTrigger("Start");
     }
 
-    public void loadEasy()
+    public void loadMedium()
     {
         levelToLoad = 4;
         transition.SetTrigger("Start");
     }
 
-    public void loadMedium()
+    public void loadHard()
     {
         levelToLoad = 5;
         transition.SetTrigger("Start");
     }
 
-    public void loadHard()
+    public void loadGameOver()
     {
         levelToLoad = 6;
         transition.SetTrigger("Start");
     }
 
-    public void loadGameOver()
+    public void loadSettings()
     {
         levelToLoad = 7;
         transition.SetTrigger("Start");
+        Debug.Log("IMPLEMENT SETTINGS SCREEN");
     }
 
     public void loadCredits()
     {
-        levelToLoad = 8;
+        levelToLoad = 7;
         transition.SetTrigger("Start");
         Debug.Log("IMPLEMENT CREDITS SCREEN");
     }
@@ -68,4 +69,15 @@ public class LevelLoader : MonoBehaviour
         //load scene
         SceneManager.LoadScene(levelToLoad);
     }
+
+
+
+
+    //IEnumerator LoadLevel(int levelIndex)
+    //{
+    //    //play animation
+    //    transition.SetTrigger("Start");
+    //    //wait
+    //    yield return new WaitForSeconds(transitionTime);
+    //}
 }
